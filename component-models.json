@@ -185,5 +185,58 @@
         "valueType": "string"
       }
     ]
+  },
+  {
+    "id": "ratings",
+    "fields": [
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "image",
+        "label": "Image",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "imageAlt",
+        "label": "Alt",
+        "value": ""
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "text",
+        "value": "",
+        "label": "Here comes my ratings text..."
+      },
+      {
+        "component": "select",
+        "name": "stars",
+        "value": "",
+        "label": "Type",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "1",
+            "value": "1"
+          },
+          {
+            "name": "2",
+            "value": "2"
+          },
+          {
+            "name": "3",
+            "value": "3"
+          },          {
+            "name": "4",
+            "value": "4"
+          },          {
+            "name": "5",
+            "value": "5"
+          }
+        ]
+      }
+    ]
   }
 ]
