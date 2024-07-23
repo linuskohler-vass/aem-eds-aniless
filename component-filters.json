@@ -15,7 +15,8 @@
       "text",
       "image",
       "button",
-      "title"
+      "title",
+      "rating"
     ]
   },
   {
@@ -29,7 +30,7 @@
       "cards",
       "columns",
       "quote",
-      "ratings"
+      "rating"
     ]
   },
   {

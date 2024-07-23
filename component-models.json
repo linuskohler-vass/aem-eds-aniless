@@ -206,7 +206,7 @@
     ]
   },
   {
-    "id": "ratings",
+    "id": "rating",
     "fields": [
       {
         "component": "reference",
@@ -226,14 +226,14 @@
         "component": "text",
         "valueType": "string",
         "name": "text",
-        "value": "",
-        "label": "Here comes my ratings text..."
+        "label": "Rating text",
+        "value": "Here comes my ratings text..."
       },
       {
         "component": "select",
         "name": "stars",
         "value": "",
-        "label": "Type",
+        "label": "Stars",
         "valueType": "string",
         "options": [
           {
