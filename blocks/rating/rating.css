@@ -17,6 +17,11 @@
   }
 }
 
+.rating__review p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
 .rating__stars {
   .rating__star--active::before {
     content: url("../../icons/star-full.svg");
