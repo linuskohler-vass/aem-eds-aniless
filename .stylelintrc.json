@@ -1,3 +1,18 @@
 {
-  "extends": ["stylelint-config-standard"]
+  "extends": "stylelint-config-standard",
+  "plugins": [
+    "stylelint-selector-bem-pattern"
+  ],
+  "rules": {
+    "plugin/selector-bem-pattern": {
+      "componentName": "[A-Z]+",
+      "componentSelectors": {
+        "initial": "^\\.{componentName}(?:-[a-z]+)?(?:__[a-z]+(?:--[a-z]+)?)?$"
+      },
+      "utilitySelectors": "^\\.u-[a-z]+$"
+    },
+    "selector-class-pattern": "^[a-zA-Z][a-zA-Z0-9]+(?:__[a-zA-Z0-9]+)?(?:--[a-zA-Z0-9]+)?$",
+    "custom-property-pattern": null,
+    "keyframes-name-pattern": null
+  }
 }

@@ -1,0 +1,28 @@
+.rating {
+  flex: 1 0 auto;
+  display: flex;
+  position: relative;
+  gap: 32px;
+  padding: 32px;
+  flex-direction: column;
+  background-color: var(--background-color);
+  box-shadow: var(--box-shadow);
+  border-radius: var(--border-radius);
+}
+
+.rating__image {
+  img {
+    border-radius: 50%;
+    max-width: 200px;
+  }
+}
+
+.rating__stars {
+  .rating__star--active::before {
+    content: url("../../icons/star-full.svg");
+  }
+
+  .rating__star--inactive::before {
+    content: url("../../icons/star-empty.svg");
+  }
+}
