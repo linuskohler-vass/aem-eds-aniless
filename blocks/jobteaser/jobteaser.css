@@ -1,0 +1,21 @@
+.jobteaser {
+  flex: 1 0 auto;
+  display: flex;
+  position: relative;
+  gap: 32px;
+  padding: 32px;
+  flex-direction: column;
+  background-color: var(--background-color);
+  box-shadow: var(--box-shadow);
+  border-radius: var(--border-radius);
+}
+
+.jobteaser__title {
+  font-size: 24px;
+  font-style: oblique;
+}
+
+.jobteaser__content {
+  margin-top: 0;
+  margin-bottom: 0;
+}
