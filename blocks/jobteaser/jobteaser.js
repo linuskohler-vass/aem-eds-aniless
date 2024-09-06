@@ -9,7 +9,7 @@ function loadTitle(jobTeaserTitleContainer) {
   }
 }
 
-async function getApiResult() {
+async function getJobTeaserData() {
   // eslint-disable-next-line no-undef
   const response = await fetch(dataEndpointUrl, {
     method: 'GET'
@@ -26,13 +26,58 @@ async function getApiResult() {
       }));
     }
   }
-  return false;
+  return {};
 }
 
-async function loadContent(jobTeaserContent) {
-  const jobTeaserInfoData = getApiResult();
-  console.log(jobTeaserInfoData);
-  console.log(jobTeaserContent);
+async function getJobTeaserTiles(jobTeaserData) {
+  const apiUrl = jobTeaserData.apiUrl;
+  if (apiUrl) {
+    // eslint-disable-next-line no-undef
+    const response = await fetch(apiUrl, {
+      method: 'GET'
+    });
+
+    if (response.ok) {
+      const responseObject = await response.json();
+
+      if (responseObject) {
+        return responseObject
+          .flatMap(results => results.jobs)
+          .map(job => ({
+            title: job.title.value,
+            dateModified: job.dateModified,
+            link: job.link,
+            htmlContent: job.htmlContent
+        }));
+      }
+    }
+  }
+
+  return [];
+}
+
+async function loadContent(jobTeaserContentContainer) {
+  const jobTeaserData = await getJobTeaserData();
+  console.log(jobTeaserData);
+  const jobTeaserTiles = await getJobTeaserTiles(jobTeaserData);
+  console.log(jobTeaserTiles);
+
+  for (const teaserTile of jobTeaserTiles) {
+    const tileTitle = document.createElement('h3');
+    tileTitle.textContent = teaserTile.title;
+    const tileDate = document.createElement('p');
+    tileDate.textContent = teaserTile.dateModified;
+    const tileLink = document.createElement('a');
+    tileLink.href = teaserTile.link;
+    tileLink.textContent = 'Link to Site';
+
+    const tileContainer = document.createElement('div');
+    tileContainer.appendChild(tileTitle);
+    tileContainer.appendChild(tileDate);
+    tileContainer.appendChild(tileLink);
+
+    jobTeaserContentContainer.appendChild(tileContainer);
+  }
 }
 
 export default function decorate(block) {
