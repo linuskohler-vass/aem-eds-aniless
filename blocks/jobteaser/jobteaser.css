@@ -5,9 +5,6 @@
   gap: 32px;
   padding: 32px;
   flex-direction: column;
-  background-color: var(--background-color);
-  box-shadow: var(--box-shadow);
-  border-radius: var(--border-radius);
 }
 
 .jobteaser__title {
@@ -15,8 +12,31 @@
   font-style: oblique;
 }
 
-/* Add styling to job-teaser content */
 .jobteaser__content {
-  margin-top: 0;
-  margin-bottom: 0;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(278px, 1fr));
+  grid-gap: 16px;
+}
+
+.jobteaser__content-tile {
+  display: list-item;
+  text-align: -webkit-match-parent;
+  unicode-bidi: isolate;
+  border: 1px solid var(--dark-color);
+  background-color: var(--background-color);
+  margin: 16px;
+}
+
+.jobteaser__content-tile__title {
+
+}
+
+.jobteaser__content-tile__date {
+
+}
+
+.jobteaser__content-tile__link {
+
 }
