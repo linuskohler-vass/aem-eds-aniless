@@ -1,5 +1,10 @@
 const dataEndpointUrl = '/bin/jobteaser/data';
 
+function loadTitle(jobTeaserTitleContainer) {
+  const elementWithTitle = jobTeaserTitleContainer.querySelector('p');
+  elementWithTitle.className = 'jobteaser__title';
+}
+
 async function getJobTeaserData() {
   // eslint-disable-next-line no-undef
   const response = await fetch(dataEndpointUrl, {
@@ -84,5 +89,7 @@ async function loadContent(block) {
 }
 
 export default async function decorate(block) {
-  await loadContent(block);
+  const container = block.children[0];
+  loadTitle(container);
+  await loadContent(container);
 }
