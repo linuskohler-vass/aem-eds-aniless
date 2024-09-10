@@ -1,4 +1,4 @@
-const dataEndpointUrl = '/bin/jobteaser/data';
+// const dataEndpointUrl = '/bin/jobteaser/data';
 
 // function loadTitle(jobTeaserTitleContainer) {
 //   const elementWithTitle = jobTeaserTitleContainer.querySelector('p');
@@ -91,12 +91,12 @@ const dataEndpointUrl = '/bin/jobteaser/data';
 //   }
 // }
 
-export default function decorate(block) {
-  const jobTeaserTitle = block.children[0];
-  jobTeaserTitle.classList.add('jobteaser__title');
-  // loadTitle(jobTeaserTitle);
-
-  const jobTeaserContent = block.children[1];
-  jobTeaserContent.classList.add('jobteaser__content');
-  // loadContent(jobTeaserContent);
-}
+// export default function decorate(block) {
+//   const jobTeaserTitle = block.children[0];
+//   jobTeaserTitle.classList.add('jobteaser__title');
+//   // loadTitle(jobTeaserTitle);
+//
+//   const jobTeaserContent = block.children[1];
+//   jobTeaserContent.classList.add('jobteaser__content');
+//   // loadContent(jobTeaserContent);
+// }
