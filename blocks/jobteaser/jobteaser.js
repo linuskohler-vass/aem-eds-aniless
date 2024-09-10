@@ -5,7 +5,9 @@ function loadTitle(jobTeaserTitleContainer) {
   const title = elementWithTitle.textContent;
 
   if (title != null) {
-    elementWithTitle.textContent = title;
+    const headingElementWithTitle = document.createElement('h2');
+    headingElementWithTitle.textContent = title;
+    jobTeaserTitleContainer.appendChild(headingElementWithTitle);
   }
 }
 
@@ -42,7 +44,7 @@ async function getJobTeaserTiles(jobTeaserData) {
 
       if (responseObject) {
         return responseObject
-          .flatMap(results => results.jobs)
+          .flatMap(results => results['jobs'])
           .map(job => ({
             title: job.title.value,
             dateModified: job.dateModified,
@@ -56,6 +58,27 @@ async function getJobTeaserTiles(jobTeaserData) {
   return [];
 }
 
+function createContentTile(teaserTile) {
+  const tileTitle = document.createElement('h3');
+  tileTitle.classList.add('jobteaser__content-tile__title');
+  tileTitle.textContent = teaserTile.title;
+  const tileDate = document.createElement('p');
+  tileTitle.classList.add('jobteaser__content-tile__date');
+  tileDate.textContent = teaserTile.dateModified;
+  const tileLink = document.createElement('a');
+  tileTitle.classList.add('jobteaser__content-tile__link');
+  tileLink.href = teaserTile.link;
+  tileLink.textContent = 'Link to Site';
+
+  const tileContainer = document.createElement('div');
+  tileContainer.classList.add('jobteaser__content-tile')
+  tileContainer.appendChild(tileTitle);
+  tileContainer.appendChild(tileDate);
+  tileContainer.appendChild(tileLink);
+
+  return tileContainer;
+}
+
 async function loadContent(jobTeaserContentContainer) {
   const jobTeaserData = await getJobTeaserData();
   console.log(jobTeaserData);
@@ -63,29 +86,17 @@ async function loadContent(jobTeaserContentContainer) {
   console.log(jobTeaserTiles);
 
   for (const teaserTile of jobTeaserTiles) {
-    const tileTitle = document.createElement('h3');
-    tileTitle.textContent = teaserTile.title;
-    const tileDate = document.createElement('p');
-    tileDate.textContent = teaserTile.dateModified;
-    const tileLink = document.createElement('a');
-    tileLink.href = teaserTile.link;
-    tileLink.textContent = 'Link to Site';
-
-    const tileContainer = document.createElement('div');
-    tileContainer.appendChild(tileTitle);
-    tileContainer.appendChild(tileDate);
-    tileContainer.appendChild(tileLink);
-
+    const tileContainer = createContentTile(teaserTile);
     jobTeaserContentContainer.appendChild(tileContainer);
   }
 }
 
-export default function decorate(block) {
+export default async function decorate(block) {
   const jobTeaserTitle = block.children[0];
   jobTeaserTitle.classList.add('jobteaser__title');
   loadTitle(jobTeaserTitle);
 
   const jobTeaserContent = block.children[1];
   jobTeaserContent.classList.add('jobteaser__content');
-  loadContent(jobTeaserContent);
+  await loadContent(jobTeaserContent);
 }
