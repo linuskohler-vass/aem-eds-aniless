@@ -2,13 +2,7 @@ const dataEndpointUrl = '/bin/jobteaser/data';
 
 function loadTitle(jobTeaserTitleContainer) {
   const elementWithTitle = jobTeaserTitleContainer.querySelector('p');
-  const title = elementWithTitle.textContent;
-
-  if (title != null) {
-    const headingElementWithTitle = document.createElement('h2');
-    headingElementWithTitle.textContent = title;
-    jobTeaserTitleContainer.appendChild(headingElementWithTitle);
-  }
+  elementWithTitle.classList.add('jobteaser__title');
 }
 
 async function getJobTeaserData() {
@@ -79,16 +73,19 @@ function createContentTile(teaserTile) {
   return tileContainer;
 }
 
-async function loadContent(jobTeaserContentContainer) {
+async function loadContent(block) {
   const jobTeaserData = await getJobTeaserData();
   console.log(jobTeaserData);
   const jobTeaserTiles = await getJobTeaserTiles(jobTeaserData);
   console.log(jobTeaserTiles);
 
+  const jobTeaserContentContainer = document.createElement('div');
+  jobTeaserContentContainer.classList.add('jobteaser__content');
   for (const teaserTile of jobTeaserTiles) {
     const tileContainer = createContentTile(teaserTile);
     jobTeaserContentContainer.appendChild(tileContainer);
   }
+  block.appendChild(jobTeaserContentContainer);
 }
 
 export default async function decorate(block) {
@@ -96,7 +93,5 @@ export default async function decorate(block) {
   jobTeaserTitle.classList.add('jobteaser__title');
   loadTitle(jobTeaserTitle);
 
-  const jobTeaserContent = block.children[1];
-  jobTeaserContent.classList.add('jobteaser__content');
-  await loadContent(jobTeaserContent);
+  await loadContent(block);
 }

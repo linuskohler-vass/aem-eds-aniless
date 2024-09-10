@@ -169,7 +169,7 @@
           }
         },
         {
-          "title": "Jobteaser",
+          "title": "Job Teaser",
           "id": "jobteaser",
           "plugins": {
             "xwalk": {
