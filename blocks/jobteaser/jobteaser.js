@@ -12,7 +12,7 @@ function loadTitle(jobTeaserTitleContainer) {
 async function getJobTeaserData() {
   // eslint-disable-next-line no-undef
   const response = await fetch(dataEndpointUrl, {
-    method: 'GET'
+    method: 'GET',
   });
 
   if (response.ok) {
@@ -34,7 +34,7 @@ async function getJobTeaserTiles(jobTeaserData) {
   if (apiUrl) {
     // eslint-disable-next-line no-undef
     const response = await fetch(apiUrl, {
-      method: 'GET'
+      method: 'GET',
     });
 
     if (response.ok) {
@@ -48,7 +48,7 @@ async function getJobTeaserTiles(jobTeaserData) {
             dateModified: job.dateModified,
             link: job.link,
             htmlContent: job.htmlContent
-        }));
+          }));
       }
     }
   }
