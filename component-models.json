@@ -275,14 +275,8 @@
     "fields": [
       {
         "component": "aem-content",
-        "valueType": "string",
         "name": "fragmentPath",
-        "label": "Fragment Path",
-        "multi": false,
-        "options": {
-          "rootPath": "/content",
-          "pathType": "cq:Page"
-        }
+        "label": "Fragment Path"
       }
     ]
   }
