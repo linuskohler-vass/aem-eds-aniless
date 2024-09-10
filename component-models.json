@@ -274,7 +274,7 @@
     "id": "fragment",
     "fields": [
       {
-        "component": "pathPicker",
+        "component": "reference",
         "valueType": "string",
         "name": "fragmentPath",
         "label": "Fragment Path",
