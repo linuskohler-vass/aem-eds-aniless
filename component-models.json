@@ -274,11 +274,15 @@
     "id": "fragment",
     "fields": [
       {
-        "component": "reference",
+        "component": "pathPicker",
         "valueType": "string",
         "name": "fragmentPath",
         "label": "Fragment Path",
-        "multi": false
+        "multi": false,
+        "options": {
+          "rootPath": "/content",
+          "pathType": "cq:Page"
+        }
       }
     ]
   }
