@@ -271,7 +271,7 @@
     ]
   },
   {
-    "id": "rating",
+    "id": "fragment",
     "fields": [
       {
         "component": "reference",
