@@ -31,7 +31,8 @@
       "columns",
       "quote",
       "rating",
-      "jobteaser"
+      "jobteaser",
+      "fragment"
     ]
   },
   {
