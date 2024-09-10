@@ -15,7 +15,8 @@
       "text",
       "image",
       "button",
-      "title"
+      "title",
+      "jobteaser"
     ]
   },
   {
@@ -29,7 +30,8 @@
       "cards",
       "columns",
       "quote",
-      "rating"
+      "rating",
+      "jobteaser"
     ]
   },
   {
