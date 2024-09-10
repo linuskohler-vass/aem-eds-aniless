@@ -269,5 +269,17 @@
         ]
       }
     ]
+  },
+  {
+    "id": "rating",
+    "fields": [
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "fragmentPath",
+        "label": "Fragment Path",
+        "multi": false
+      }
+    ]
   }
 ]
