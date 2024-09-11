@@ -35,7 +35,7 @@ async function getJobTeaserTiles(jobTeaserData) {
     if (response.ok) {
       const responseObject = await response.json();
       if (responseObject) {
-        return responseObject.jobs.slice(0, 15)
+        return responseObject.jobs.slice(0, 16)
           .map((job) => ({
             title: job.title.value,
             dateModified: job.dateModified,
