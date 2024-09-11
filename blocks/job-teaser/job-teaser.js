@@ -11,6 +11,7 @@ async function getJobTeaserData() {
     method: 'GET',
   });
 
+  console.log(response);
   if (response.ok) {
     const responseObject = await response.json();
 
