@@ -1,4 +1,4 @@
-const dataEndpointUrl = '/bin/jobteaser/data';
+const DATA_ENDPOINT_URL = '/bin/jobteaser/data';
 
 function loadTitle(jobTeaserTitleContainer) {
   const elementWithTitle = jobTeaserTitleContainer.querySelector('p');
@@ -7,7 +7,7 @@ function loadTitle(jobTeaserTitleContainer) {
 
 async function getJobTeaserData() {
   // eslint-disable-next-line no-undef
-  const response = await fetch(dataEndpointUrl, {
+  const response = await fetch(DATA_ENDPOINT_URL, {
     method: 'GET',
   });
 
@@ -15,7 +15,7 @@ async function getJobTeaserData() {
     const responseObject = await response.json();
 
     if (responseObject) {
-      return responseObject.map(results => ({
+      return responseObject.map((results) => ({
         apiUrl: results.apiUrl,
         baseFilterUrl: results.baseFilterUrl,
         baseTeaserUrl: results.baseTeaserUrl,
@@ -26,7 +26,7 @@ async function getJobTeaserData() {
 }
 
 async function getJobTeaserTiles(jobTeaserData) {
-  const apiUrl = jobTeaserData.apiUrl;
+  const { apiUrl } = jobTeaserData;
   if (apiUrl) {
     // eslint-disable-next-line no-undef
     const response = await fetch(apiUrl, {
@@ -38,12 +38,12 @@ async function getJobTeaserTiles(jobTeaserData) {
 
       if (responseObject) {
         return responseObject
-          .flatMap(results => results['jobs'])
-          .map(job => ({
+          .flatMap((results) => results.jobs)
+          .map((job) => ({
             title: job.title.value,
             dateModified: job.dateModified,
             link: job.link,
-            htmlContent: job.htmlContent
+            htmlContent: job.htmlContent,
           }));
       }
     }
@@ -65,7 +65,7 @@ function createContentTile(teaserTile) {
   tileLink.textContent = 'Link to Site';
 
   const tileContainer = document.createElement('div');
-  tileContainer.classList.add('jobteaser__content-tile')
+  tileContainer.classList.add('jobteaser__content-tile');
   tileContainer.appendChild(tileTitle);
   tileContainer.appendChild(tileDate);
   tileContainer.appendChild(tileLink);
@@ -81,7 +81,8 @@ async function loadContent(block) {
 
   const jobTeaserContentContainer = document.createElement('div');
   jobTeaserContentContainer.classList.add('jobteaser__content');
-  for (const teaserTile of jobTeaserTiles) {
+  for (let i = 0; i < jobTeaserTiles.length; i += 1) {
+    const teaserTile = jobTeaserTiles[i];
     const tileContainer = createContentTile(teaserTile);
     jobTeaserContentContainer.appendChild(tileContainer);
   }
