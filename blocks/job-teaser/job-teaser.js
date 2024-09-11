@@ -35,12 +35,13 @@ async function getJobTeaserTiles(jobTeaserData) {
     if (response.ok) {
       const responseObject = await response.json();
       if (responseObject) {
-        return responseObject.jobs.map((job) => ({
-          title: job.title.value,
-          dateModified: job.dateModified,
-          link: job.link,
-          htmlContent: job.htmlContent,
-        }));
+        return responseObject.jobs.slice(0, 15)
+          .map((job) => ({
+            title: job.title.value,
+            dateModified: job.dateModified,
+            link: job.link,
+            htmlContent: job.htmlContent,
+          }));
       }
     }
   }
@@ -48,14 +49,14 @@ async function getJobTeaserTiles(jobTeaserData) {
 }
 
 function createContentTile(teaserTile) {
-  const tileTitle = document.createElement('h3');
+  const tileTitle = document.createElement('h4');
   tileTitle.classList.add('jobteaser__content-tile__title');
   tileTitle.textContent = teaserTile.title;
   const tileDate = document.createElement('p');
-  tileTitle.classList.add('jobteaser__content-tile__date');
+  tileDate.classList.add('jobteaser__content-tile__date');
   tileDate.textContent = teaserTile.dateModified;
   const tileLink = document.createElement('a');
-  tileTitle.classList.add('jobteaser__content-tile__link');
+  tileLink.classList.add('jobteaser__content-tile__link');
   tileLink.href = teaserTile.link;
   tileLink.textContent = 'Link to Site';
 
@@ -70,16 +71,12 @@ function createContentTile(teaserTile) {
 
 async function loadContent(block) {
   const jobTeaserData = await getJobTeaserData();
-  console.log(jobTeaserData);
   const jobTeaserTiles = await getJobTeaserTiles(jobTeaserData);
-  console.log(jobTeaserTiles);
 
   const jobTeaserContentContainer = document.createElement('div');
   jobTeaserContentContainer.classList.add('jobteaser__content');
   for (let i = 0; i < jobTeaserTiles.length; i += 1) {
-    const teaserTile = jobTeaserTiles[i];
-    const tileContainer = createContentTile(teaserTile);
-    jobTeaserContentContainer.appendChild(tileContainer);
+    jobTeaserContentContainer.appendChild(createContentTile(jobTeaserTiles[i]));
   }
   block.appendChild(jobTeaserContentContainer);
 }

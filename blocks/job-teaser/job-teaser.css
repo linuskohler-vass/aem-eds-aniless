@@ -26,7 +26,7 @@
   unicode-bidi: isolate;
   border: 1px solid var(--dark-color);
   background-color: var(--background-color);
-  margin: 16px;
+  padding: 16px;
 }
 
 .jobteaser__content-tile__title {
