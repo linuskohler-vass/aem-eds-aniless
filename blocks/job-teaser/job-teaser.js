@@ -11,16 +11,15 @@ async function getJobTeaserData() {
     method: 'GET',
   });
 
-  console.log(response);
   if (response.ok) {
     const responseObject = await response.json();
 
     if (responseObject) {
-      return responseObject.map((results) => ({
-        apiUrl: results.apiUrl,
-        baseFilterUrl: results.baseFilterUrl,
-        baseTeaserUrl: results.baseTeaserUrl,
-      }));
+      return {
+        apiUrl: responseObject.apiUrl,
+        baseFilterUrl: responseObject.baseFilterUrl,
+        baseTeaserUrl: responseObject.baseTeaserUrl,
+      };
     }
   }
   return {};
@@ -33,23 +32,18 @@ async function getJobTeaserTiles(jobTeaserData) {
     const response = await fetch(apiUrl, {
       method: 'GET',
     });
-
     if (response.ok) {
       const responseObject = await response.json();
-
       if (responseObject) {
-        return responseObject
-          .flatMap((results) => results.jobs)
-          .map((job) => ({
-            title: job.title.value,
-            dateModified: job.dateModified,
-            link: job.link,
-            htmlContent: job.htmlContent,
-          }));
+        return responseObject.jobs.map((job) => ({
+          title: job.title.value,
+          dateModified: job.dateModified,
+          link: job.link,
+          htmlContent: job.htmlContent,
+        }));
       }
     }
   }
-
   return [];
 }
 
