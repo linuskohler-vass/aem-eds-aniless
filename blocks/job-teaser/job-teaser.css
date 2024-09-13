@@ -1,12 +1,3 @@
-.jobteaser {
-  flex: 1 0 auto;
-  display: flex;
-  position: relative;
-  gap: 32px;
-  padding: 32px;
-  flex-direction: column;
-}
-
 .jobteaser__title {
   font-size: 32px;
   font-weight: bold;
@@ -20,7 +11,7 @@
   grid-gap: 16px;
 }
 
-.jobteaser__content-tile {
+.jobteaser__tile {
   display: list-item;
   text-align: -webkit-match-parent;
   unicode-bidi: isolate;
@@ -31,15 +22,15 @@
   word-wrap: break-word;
 }
 
-.jobteaser__content-tile__title {
+.jobteaser__tiletitle {
   font-size: 24px;
 }
 
-.jobteaser__content-tile__date {
+.jobteaser__tiledate {
   font-size: 16px;
 }
 
-.jobteaser__content-tile__link {
+.jobteaser__tilelink {
   font-size: 16px;
   border-radius: 5px;
   padding: 16px;

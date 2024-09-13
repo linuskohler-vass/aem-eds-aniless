@@ -50,18 +50,18 @@ async function getJobTeaserTiles(jobTeaserData) {
 
 function createContentTile(teaserTile) {
   const tileTitle = document.createElement('h4');
-  tileTitle.classList.add('jobteaser__content-tile__title');
+  tileTitle.classList.add('jobteaser__tiletitle');
   tileTitle.textContent = teaserTile.title;
   const tileDate = document.createElement('p');
-  tileDate.classList.add('jobteaser__content-tile__date');
+  tileDate.classList.add('jobteaser__tiledate');
   tileDate.textContent = teaserTile.dateModified;
   const tileLink = document.createElement('a');
-  tileLink.classList.add('jobteaser__content-tile__link');
+  tileLink.classList.add('jobteaser__tilelink');
   tileLink.href = teaserTile.link;
   tileLink.textContent = 'Link to Site';
 
   const tileContainer = document.createElement('div');
-  tileContainer.classList.add('jobteaser__content-tile');
+  tileContainer.classList.add('jobteaser__tile');
   tileContainer.appendChild(tileTitle);
   tileContainer.appendChild(tileDate);
   tileContainer.appendChild(tileLink);

@@ -10,11 +10,9 @@
   border-radius: var(--border-radius);
 }
 
-.rating__image {
-  img {
+.rating__image img {
     border-radius: 50%;
     max-width: 200px;
-  }
 }
 
 .rating__review p {
@@ -22,12 +20,10 @@
   margin-bottom: 0;
 }
 
-.rating__stars {
-  .rating__star--active::before {
-    content: url("../../icons/star-full.svg");
-  }
+.rating__star--active::before {
+  content: url("../../icons/star-full.svg");
+}
 
-  .rating__star--inactive::before {
-    content: url("../../icons/star-empty.svg");
-  }
+.rating__star--inactive::before {
+  content: url("../../icons/star-empty.svg");
 }
