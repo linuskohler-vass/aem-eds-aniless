@@ -9,10 +9,9 @@ export default function decorate(block) {
     li.className = 'food';
     moveInstrumentation(row, li);
     while (row.firstElementChild) li.append(row.firstElementChild);
-    [...li.children].forEach((div) => {
-      if (div.children.length === 1 && div.querySelector('picture')) div.className = 'food__image';
-      else div.className = 'food__body';
-    });
+    li.children[0].className = 'food__image';
+    li.children[1].className = 'food__body';
+    li.children[2].className = 'food__impact';
     ul.append(li);
   });
   ul.querySelectorAll('picture > img').forEach((img) => {
