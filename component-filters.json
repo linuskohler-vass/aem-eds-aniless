@@ -15,10 +15,7 @@
       "text",
       "image",
       "button",
-      "title",
-      "jobteaser",
-      "fragment",
-      "rating"
+      "title"
     ]
   },
   {
@@ -34,13 +31,20 @@
       "quote",
       "rating",
       "jobteaser",
-      "fragment"
+      "fragment",
+      "foodmeter"
     ]
   },
   {
     "id": "cards",
     "components": [
       "card"
+    ]
+  },
+  {
+    "id": "foodmeter",
+    "components": [
+      "food"
     ]
   }
 ]
