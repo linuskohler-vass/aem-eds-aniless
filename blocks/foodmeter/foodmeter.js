@@ -18,6 +18,7 @@ export default function decorate(block) {
 
     li.addEventListener('click', (event) => {
       event.currentTarget.classList.toggle('food-selected');
+      dispatchSelectionChange();
     });
   });
 
@@ -29,4 +30,9 @@ export default function decorate(block) {
 
   block.textContent = '';
   block.append(ul);
+}
+
+function dispatchSelectionChange() {
+  const event = new CustomEvent('foodSelectionChange', { detail: {} });
+  document.dispatchEvent(event);
 }

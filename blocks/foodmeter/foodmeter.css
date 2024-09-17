@@ -7,18 +7,16 @@
   grid-gap: 16px;
 }
 
-.foodmeter > ul > li {
+.foodmeter .food {
   border: 1px solid var(--dark-color);
   background-color: var(--background-color);
-}
-
-.foodmeter .food {
   cursor: pointer;
+  transition: all 0.3s;
 }
 
 .foodmeter .food-selected {
-  box-shadow: var(--box-shadow);
-  border: 4px solid var(--link-color)
+  box-shadow: rgba(50, 50, 93, 0.25) 0 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0 18px 36px -18px inset;
+  border: 4px solid var(--link-color);
 }
 
 .foodmeter .food__image {

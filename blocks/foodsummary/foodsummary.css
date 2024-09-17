@@ -1,0 +1,15 @@
+.foodsummary > div > div {
+  display: flex;
+  justify-content: center;
+  margin-top: 16px;
+  color: var(--link-color);
+  background: radial-gradient(circle, rgba(248,241,231,1) 0%, rgba(255,250,242,1) 100%);
+}
+
+.foodsummary .foodsummary__label {
+
+}
+
+.foodsummary .foodsummary__count {
+  margin-left: 8px;
+}
