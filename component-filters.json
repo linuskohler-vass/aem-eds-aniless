@@ -32,7 +32,8 @@
       "rating",
       "jobteaser",
       "fragment",
-      "foodmeter"
+      "foodmeter",
+      "foodsummary"
     ]
   },
   {
@@ -44,8 +45,7 @@
   {
     "id": "foodmeter",
     "components": [
-      "food",
-      "foodsummary"
+      "food"
     ]
   }
 ]
