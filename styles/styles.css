@@ -234,5 +234,5 @@ main .section.highlight {
 }
 
 main .section.food {
-  background-color: var(--lightest-color);
+  background-color: var(--link-color);
 }

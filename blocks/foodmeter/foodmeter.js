@@ -3,6 +3,7 @@ import { createOptimizedPicture } from '../../scripts/aem.js';
 
 function dispatchSelectionChange() {
   const event = new CustomEvent('foodSelectionChange', { detail: {} });
+  console.log('Call change event!');
   document.dispatchEvent(event);
 }
 
