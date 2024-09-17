@@ -1,6 +1,11 @@
 import { moveInstrumentation } from '../../scripts/scripts.js';
 import { createOptimizedPicture } from '../../scripts/aem.js';
 
+function dispatchSelectionChange() {
+  const event = new CustomEvent('foodSelectionChange', { detail: {} });
+  document.dispatchEvent(event);
+}
+
 export default function decorate(block) {
   /* change to ul, li */
   const ul = document.createElement('ul');
@@ -30,9 +35,4 @@ export default function decorate(block) {
 
   block.textContent = '';
   block.append(ul);
-}
-
-function dispatchSelectionChange() {
-  const event = new CustomEvent('foodSelectionChange', { detail: {} });
-  document.dispatchEvent(event);
 }
