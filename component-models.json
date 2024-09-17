@@ -305,5 +305,17 @@
         "valueType": "number"
       }
     ]
+  },
+  {
+    "id": "foodsummary",
+    "fields": [
+      {
+        "component": "text",
+        "name": "impact",
+        "value": "",
+        "label": "Impact",
+        "valueType": "number"
+      }
+    ]
   }
 ]

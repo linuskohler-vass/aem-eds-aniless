@@ -167,6 +167,21 @@
           }
         },
         {
+          "title": "Foodsummary",
+          "id": "foodsummary",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block/item",
+                "template": {
+                  "name": "Foodsummary",
+                  "model": "foodsummary"
+                }
+              }
+            }
+          }
+        },
+        {
           "title": "Quote",
           "id": "quote",
           "plugins": {
