@@ -42,6 +42,7 @@
 
   /* custom shadow */
   --box-shadow: rgb(50 50 93 / 25%) 0px 2px 5px -1px, rgb(0 0 0 / 30%) 0px 1px 3px -1px;
+  --box-shadow-strong: rgb(50 50 93 / 25%) 0px 5px 10px -1px, rgb(0 0 0 / 30%) 0px 10px 30px -1px;
 
   /* custom common border-radius */
   --border-radius: 8px;
