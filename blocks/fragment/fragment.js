@@ -33,6 +33,9 @@ export async function loadFragment(path) {
       resetAttributeBase('img', 'src');
       resetAttributeBase('source', 'srcset');
 
+      // eslint-disable-next-line no-console
+      console.log(`We load a inner html: ${main.innerHTML}`);
+
       decorateMain(main);
       await loadBlocks(main);
       return main;
