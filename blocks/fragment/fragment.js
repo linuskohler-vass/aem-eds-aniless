@@ -19,10 +19,12 @@ import {
  */
 export async function loadFragment(path) {
   if (path && path.startsWith('/')) {
-    // eslint-disable-next-line no-console
-    console.log(`Path to fetch: ${path}.plain.html`);
+    const pathWithoutHtml = path.replace(/\.html/g, '');
 
-    const resp = await fetch(`${path}.plain.html`);
+    // eslint-disable-next-line no-console
+    console.log(`Path to fetch: ${pathWithoutHtml}.plain.html`);
+
+    const resp = await fetch(`${pathWithoutHtml}.plain.html`);
     if (resp.ok) {
       const main = document.createElement('main');
 
