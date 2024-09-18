@@ -22,7 +22,14 @@ export async function loadFragment(path) {
     const resp = await fetch(`${path}.plain.html`);
     if (resp.ok) {
       const main = document.createElement('main');
+
+      // eslint-disable-next-line no-console
+      console.log(`Prepared the main: ${main.innerHTML}`);
+
       main.innerHTML = await resp.text();
+
+      // eslint-disable-next-line no-console
+      console.log(`Response: ${main.innerHTML}`);
 
       // reset base path for media to fragment base
       const resetAttributeBase = (tag, attr) => {
