@@ -1,5 +1,17 @@
 let impactCounter;
 
+function impactValueToText(impactNumber) {
+  switch (true) {
+    case (impactNumber < 5):
+      return 'Good';
+    case (impactNumber < 10):
+      return 'Okay';
+    case (impactNumber < 20):
+      return 'Bad';
+    default:
+      return 'Very bad';
+  }
+}
 function calculateImpact() {
   const selectedFood = document.querySelectorAll('.foodmeter .food-selected');
 
@@ -10,7 +22,7 @@ function calculateImpact() {
     totalImpact += impactValue;
   });
 
-  impactCounter.textContent = `${totalImpact}`;
+  impactCounter.textContent = impactValueToText(totalImpact);
 }
 
 export default function decorate(block) {

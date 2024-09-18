@@ -236,3 +236,7 @@ main .section.highlight {
 main .section.food {
   background-color: var(--lightest-color);
 }
+
+main .section.icon-columns img {
+  width: 128px;
+}
