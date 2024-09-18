@@ -46,6 +46,9 @@ export default async function decorate(block) {
   const path = link ? link.getAttribute('href') : block.textContent.trim();
   const fragment = await loadFragment(path);
   if (fragment) {
+    // eslint-disable-next-line no-console
+    console.log(`We load a fragment: ${fragment.innerHTML}`);
+
     const fragmentSection = fragment.querySelector(':scope .section');
     if (fragmentSection) {
       block.closest('.section').classList.add(...fragmentSection.classList);
