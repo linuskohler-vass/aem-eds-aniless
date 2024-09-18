@@ -1,3 +1,5 @@
+let impactCounter;
+
 function calculateImpact() {
   const selectedFood = document.querySelectorAll('.foodmeter .food-selected');
 
@@ -8,8 +10,7 @@ function calculateImpact() {
     totalImpact += impactValue;
   });
 
-  const impactCount = document.querySelector('.foodsummary__count');
-  impactCount.textContent = `${totalImpact}`;
+  impactCounter.textContent = `${totalImpact}`;
 }
 
 export default function decorate(block) {
@@ -20,6 +21,8 @@ export default function decorate(block) {
   impactCount.className = 'foodsummary__count';
 
   impactLabel.parentElement.appendChild(impactCount);
+
+  impactCounter = impactCount;
 
   calculateImpact();
 

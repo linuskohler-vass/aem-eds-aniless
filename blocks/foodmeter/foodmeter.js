@@ -12,6 +12,8 @@ export default function decorate(block) {
   [...block.children].forEach((row) => {
     const li = document.createElement('li');
     li.className = 'food';
+
+    /* To investigate: How to load such labels, also with localization ? */
     li.title = 'Select or deselect food';
 
     moveInstrumentation(row, li);
