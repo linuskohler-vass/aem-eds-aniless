@@ -1,6 +1,9 @@
 import { moveInstrumentation } from '../../scripts/scripts.js';
 import { createOptimizedPicture, fetchPlaceholders } from '../../scripts/aem.js';
 
+let titleFoodSelectionText;
+let titleFoodUnSelectionText;
+
 function dispatchSelectionChange() {
   const event = new CustomEvent('foodSelectionChange', { detail: {} });
   document.dispatchEvent(event);
@@ -8,9 +11,12 @@ function dispatchSelectionChange() {
 
 async function loadTitle() {
   const placeholders = await fetchPlaceholders('');
-  const { rating } = placeholders;
+  const { titleFoodSelection, titleFoodUnSelection } = placeholders;
 
-  console.log(rating);
+  titleFoodSelectionText = titleFoodSelection;
+  titleFoodUnSelectionText = titleFoodUnSelection;
+
+  console.log(titleFoodSelectionText);
 }
 
 export default function decorate(block) {
@@ -34,6 +40,15 @@ export default function decorate(block) {
 
     li.addEventListener('click', (event) => {
       event.currentTarget.classList.toggle('food-selected');
+
+      if (event.currentTarget.classList.contains('food-selected')) {
+        li.title = titleFoodUnSelectionText;
+      } else {
+        li.title = titleFoodSelectionText;
+      }
+
+      console.log(`Title ${titleFoodUnSelectionText}`);
+
       dispatchSelectionChange();
     });
   });

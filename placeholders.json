@@ -1,0 +1,18 @@
+{
+  "total": 2,
+  "offset": 0,
+  "limit": 2,
+  "data": [
+    {
+      ":path": "/content/aem-eds-ue-aniless/placeholders/jcr:content/row",
+      "Key": "titleFoodSelection",
+      "Text": "Select food"
+    },
+    {
+      ":path": "/content/aem-eds-ue-aniless/placeholders/jcr:content/row_1653332395",
+      "Key": "titleFoodUnselection",
+      "Text": "Deselect food"
+    }
+  ],
+  ":type": "sheet"
+}
