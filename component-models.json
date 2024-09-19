@@ -281,6 +281,16 @@
     ]
   },
   {
+    "id": "pageembed",
+    "fields": [
+      {
+        "component": "aem-content",
+        "name": "fragmentPath",
+        "label": "Fragment Path"
+      }
+    ]
+  },
+  {
     "id": "food",
     "fields": [
       {
