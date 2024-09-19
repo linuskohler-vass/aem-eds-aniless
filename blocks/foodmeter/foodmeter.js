@@ -9,13 +9,12 @@ function dispatchSelectionChange() {
   document.dispatchEvent(event);
 }
 
-async function loadTitle() {
+async function loadTitleFromPlaceholders() {
   const placeholders = await fetchPlaceholders();
-  const { titleFoodSelection } = placeholders;
+  const { titleFoodSelection, titleFoodUnselection } = placeholders;
 
   titleFoodSelectionText = titleFoodSelection;
-
-  console.log(titleFoodSelectionText);
+  titleFoodUnSelectionText = titleFoodUnselection;
 }
 
 export default function decorate(block) {
@@ -25,10 +24,7 @@ export default function decorate(block) {
     const li = document.createElement('li');
     li.className = 'food';
 
-    loadTitle();
-
-    /* To investigate: How to load such labels, also with localization ? */
-    li.title = 'Select or deselect food';
+    loadTitleFromPlaceholders();
 
     moveInstrumentation(row, li);
     while (row.firstElementChild) li.append(row.firstElementChild);
@@ -45,8 +41,6 @@ export default function decorate(block) {
       } else {
         li.title = titleFoodSelectionText;
       }
-
-      console.log(`Title ${titleFoodUnSelectionText}`);
 
       dispatchSelectionChange();
     });

@@ -5,12 +5,12 @@
   "data": [
     {
       ":path": "/content/aem-eds-ue-aniless/placeholders/jcr:content/row",
-      "Key": "titleFoodSelection",
+      "Key": "Title Food Selection",
       "Text": "Select food"
     },
     {
       ":path": "/content/aem-eds-ue-aniless/placeholders/jcr:content/row_1653332395",
-      "Key": "titleFoodUnselection",
+      "Key": "Title Food Unselection",
       "Text": "Deselect food"
     }
   ],
