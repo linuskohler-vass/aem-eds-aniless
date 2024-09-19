@@ -57,6 +57,7 @@ function createContentTile(teaserTile) {
   tileDate.textContent = teaserTile.dateModified;
   const tileLink = document.createElement('a');
   tileLink.classList.add('jobteaser__tilelink');
+  tileLink.classList.add('button');
   tileLink.href = teaserTile.link;
   tileLink.textContent = 'Link to Site';
 

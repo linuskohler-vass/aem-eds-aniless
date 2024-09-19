@@ -1,5 +1,5 @@
 .jobteaser__title {
-  font-size: 32px;
+  font-size: var(--heading-font-size-l);
   font-weight: bold;
 }
 
@@ -16,23 +16,21 @@
   text-align: -webkit-match-parent;
   unicode-bidi: isolate;
   border: 1px solid var(--dark-color);
-  background-color: var(--background-color);
+  border-radius: var(--border-radius);
+  background-color: var(--lightest-color);
   padding: 16px;
   list-style-type: none;
   word-wrap: break-word;
 }
 
 .jobteaser__tiletitle {
-  font-size: 24px;
+  font-size: var(--heading-font-size-m);
 }
 
 .jobteaser__tiledate {
-  font-size: 16px;
+  font-size: var(--body-font-size-xs);
 }
 
 .jobteaser__tilelink {
-  font-size: 16px;
-  border-radius: 5px;
-  padding: 16px;
-  background-color: var(--dark-color);
+  font-size: var(--body-font-size-xs);
 }

@@ -33,6 +33,8 @@ export default function decorate(block) {
     li.children[2].className = 'food__impact';
     ul.append(li);
 
+    li.title = titleFoodSelectionText;
+
     li.addEventListener('click', (event) => {
       event.currentTarget.classList.toggle('food-selected');
 
