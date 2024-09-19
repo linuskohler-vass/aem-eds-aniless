@@ -1,9 +1,16 @@
 import { moveInstrumentation } from '../../scripts/scripts.js';
-import { createOptimizedPicture } from '../../scripts/aem.js';
+import { createOptimizedPicture, fetchPlaceholders } from '../../scripts/aem.js';
 
 function dispatchSelectionChange() {
   const event = new CustomEvent('foodSelectionChange', { detail: {} });
   document.dispatchEvent(event);
+}
+
+async function loadTitle() {
+  const placeholders = await fetchPlaceholders('');
+  const { rating } = placeholders;
+
+  console.log(rating);
 }
 
 export default function decorate(block) {
@@ -12,6 +19,8 @@ export default function decorate(block) {
   [...block.children].forEach((row) => {
     const li = document.createElement('li');
     li.className = 'food';
+
+    loadTitle();
 
     /* To investigate: How to load such labels, also with localization ? */
     li.title = 'Select or deselect food';
