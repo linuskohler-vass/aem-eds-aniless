@@ -1,4 +1,4 @@
-import {loadFragment} from '../fragment/fragment.js';
+import { loadFragment } from '../fragment/fragment.js';
 
 export default async function decorate(block) {
   const link = block.querySelector('a');
@@ -10,7 +10,8 @@ export default async function decorate(block) {
       const pageFragmentParent = block.closest('.page-fragment');
       pageFragmentParent.innerHTML = '';
       [...pageFragment.childNodes].forEach(
-        (childNode) => pageFragmentParent.appendChild(childNode));
+        (childNode) => pageFragmentParent.appendChild(childNode),
+      );
     }
   }
 }
