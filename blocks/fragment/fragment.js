@@ -1,9 +1,3 @@
-/*
- * Fragment Block
- * Include content on a page as a fragment.
- * https://www.aem.live/developer/block-collection/fragment
- */
-
 import {
   decorateMain,
 } from '../../scripts/scripts.js';
@@ -17,6 +11,7 @@ import {
  * @param {string} path The path to the fragment
  * @returns {HTMLElement} The root element of the fragment
  */
+/* eslint-disable import/prefer-default-export */
 export async function loadFragment(path) {
   if (path && path.startsWith('/')) {
     const pathWithoutHtml = path.replace(/\.html/g, '');
