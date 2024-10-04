@@ -31,9 +31,9 @@
       "quote",
       "rating",
       "jobteaser",
-      "fragment",
       "foodmeter",
-      "foodsummary"
+      "foodsummary",
+      "pageFragment"
     ]
   },
   {

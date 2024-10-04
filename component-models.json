@@ -271,16 +271,6 @@
     ]
   },
   {
-    "id": "fragment",
-    "fields": [
-      {
-        "component": "aem-content",
-        "name": "fragmentPath",
-        "label": "Fragment Path"
-      }
-    ]
-  },
-  {
     "id": "food",
     "fields": [
       {
@@ -315,6 +305,16 @@
         "value": "",
         "label": "Impact",
         "valueType": "number"
+      }
+    ]
+  },
+  {
+    "id": "pageFragment",
+    "fields": [
+      {
+        "component": "aem-content",
+        "name": "pageFragmentPath",
+        "label": "Page Fragment Path"
       }
     ]
   }
