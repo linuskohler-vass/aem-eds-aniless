@@ -22,12 +22,8 @@ jobs:
       - name: Build
         run: |
           npm install
-          npm run-script build
         env:
           API_URL: ${{ secrets.API_URL }}
-
-      - name: Build
-        run: npm run build
 
       - name: Deploy
         run: npm run deploy
