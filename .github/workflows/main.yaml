@@ -10,8 +10,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    env:   # Set environment variable at the job level
-      API_URL: "https://api.example.com"
+    environment: main
     steps:
       - name: Check out the repository
         uses: actions/checkout@v2
