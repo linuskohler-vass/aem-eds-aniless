@@ -22,11 +22,10 @@ jobs:
       - name: Build
         run: |
           npm install
-        env:
-          API_URL: ${{ secrets.API_URL }}
 
-      - name: Deploy
-        run: npm run deploy
+      - name: Read environment variable
+        run: |
+          echo "process.env.API_URL=${{ secrets.API_URL }}"
 
       - run: npm ci
       - run: npm run lint
