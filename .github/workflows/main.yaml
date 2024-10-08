@@ -10,7 +10,6 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    environment: main
     steps:
       - name: Check out the repository
         uses: actions/checkout@v2
@@ -26,7 +25,7 @@ jobs:
 
       - name: Read environment variable
         run: |
-          echo "Environment variable = ${{ env.API_URL }}"
+          echo "Environment variable = ${{ vars.API_URL }}"
 
       - run: npm ci
       - run: npm run lint
