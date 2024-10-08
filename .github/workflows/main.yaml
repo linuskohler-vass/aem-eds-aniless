@@ -26,7 +26,7 @@ jobs:
 
       - name: Read environment variable
         run: |
-          echo "Environment variable = ${{ vars.API_URL }}"
+          echo "Environment variable = ${{ secrets.API_URL }}"
 
       - run: npm ci
       - run: npm run lint
