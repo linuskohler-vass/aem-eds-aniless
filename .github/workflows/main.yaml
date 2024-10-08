@@ -19,12 +19,12 @@ jobs:
         with:
           node-version: '16'
 
-      - name: Set environment variables globally
+      - name: Build
         run: |
-          echo "process.env.API_URL=${{ secrets.API_URL }}" >> $GITHUB_ENV
-
-      - name: Install dependencies
-        run: npm install
+          npm install
+          npm run-script build
+        env:
+          API_URL: ${{ secrets.API_URL }}
 
       - name: Build
         run: npm run build
