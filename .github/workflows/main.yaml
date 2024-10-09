@@ -33,5 +33,9 @@ jobs:
         env:
           API_URL: ${{ secrets.API_URL }}
 
+      - name: Replace the API_URL environment variable
+        run: |
+          sed -i 's|#{API_URL_PLACEHOLDER}|${{ secrets.API_URL }}|g' blocks/job-teaser/job-teaser.js
+
       - run: npm ci
       - run: npm run lint
