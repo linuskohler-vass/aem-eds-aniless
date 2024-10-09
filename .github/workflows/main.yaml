@@ -26,6 +26,7 @@ jobs:
 
       - name: Read environment variable
         run: |
+          echo "Testing secret variables"
           echo "Environment variable = ${{ secrets.API_URL }}"
 
       - run: npm ci
