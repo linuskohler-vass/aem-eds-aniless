@@ -71,8 +71,6 @@ function createContentTile(teaserTile) {
 }
 
 async function loadContent(block) {
-  console.log('#{API_URL_PLACEHOLDER}');
-  console.log(process.env.API_URL);
   const jobTeaserData = await getJobTeaserData();
   const jobTeaserTiles = await getJobTeaserTiles(jobTeaserData);
 
