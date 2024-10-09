@@ -24,10 +24,14 @@ jobs:
         run: |
           npm install
 
-      - name: Read environment variable
+      - name: Set API_URL environment variable
+        run: echo "API_URL=${{ secrets.API_URL }}" >> .env
+
+      - name: Access API_URL in Node.js
         run: |
-          echo "Testing secret variables"
-          echo "Environment variable = ${{ secrets.API_URL }}"
+          node -e "console.log('API_URL from env:', process.env.API_URL);"
+        env:
+          API_URL: ${{ secrets.API_URL }}
 
       - run: npm ci
       - run: npm run lint
