@@ -11,6 +11,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     environment: main
+    env:
+      API_URL: ${{ secrets.API_URL }}
     steps:
       - name: Check out the repository
         uses: actions/checkout@v2
@@ -30,8 +32,6 @@ jobs:
       - name: Access API_URL in Node.js
         run: |
           node -e "console.log('API_URL from env:', process.env.API_URL);"
-        env:
-          API_URL: ${{ secrets.API_URL }}
 
       - name: Replace the API_URL environment variable
         run: |
