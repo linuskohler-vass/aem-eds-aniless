@@ -22,20 +22,12 @@ jobs:
         with:
           node-version: '16'
 
-      - name: Build
-        run: |
-          npm install
-
       - name: Set API_URL environment variable
         run: echo "API_URL=${{ secrets.API_URL }}" >> .env
 
       - name: Access API_URL in Node.js
         run: |
           node -e "console.log('API_URL from env:', process.env.API_URL);"
-
-      - name: Replace the API_URL environment variable
-        run: |
-          sed -i 's|#{API_URL_PLACEHOLDER}|${{ secrets.API_URL }}|g' blocks/job-teaser/job-teaser.js
 
       - run: npm ci
       - run: npm run lint

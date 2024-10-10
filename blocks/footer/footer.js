@@ -18,6 +18,5 @@ export default async function decorate(block) {
 
   block.append(footer);
 
-  console.log('#{API_URL_PLACEHOLDER}');
   console.log(process.env.API_URL);
 }
