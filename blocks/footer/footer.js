@@ -17,6 +17,4 @@ export default async function decorate(block) {
   while (fragment.firstElementChild) footer.append(fragment.firstElementChild);
 
   block.append(footer);
-
-  console.log(process.env.API_URL);
 }

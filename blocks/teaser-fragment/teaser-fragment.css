@@ -11,3 +11,29 @@
 .fragment-wrapper > .section:last-of-type {
   padding-bottom: 0;
 }
+
+.teaser-fragment-container {
+  display: flex;
+  margin: auto;
+  width: 1200px;
+  gap: 60px;
+}
+
+.teaser-fragment-wrapper {
+  flex-basis: 50%;
+}
+
+.teaser-fragment {
+  border: 1px solid var(--dark-color);
+  background-color: var(--background-color);
+
+}
+
+.teaser-fragment h1 {
+  margin: 16px 32px;
+  font-size: var(--body-font-size);
+}
+
+.teaser-fragment a.button:any-link {
+  margin: 16px 32px;
+}
