@@ -33,7 +33,8 @@
       "jobteaser",
       "foodmeter",
       "foodsummary",
-      "pageFragment"
+      "pageFragment",
+      "teaserFragment"
     ]
   },
   {
