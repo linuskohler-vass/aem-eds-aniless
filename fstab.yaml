@@ -1,5 +1,5 @@
 mountpoints:
   /:
-    url: "https://author-p11338-e1404827.adobeaemcloud.com/bin/franklin.delivery/LikoDevelopment/eds-test-content/aem-eds-ue-aniless/main"
+    url: "https://author-p11338-e1404827.adobeaemcloud.com/bin/franklin.delivery/LikoDevelopment/aem-eds-ue-aniless/main"
     type: "markup"
     suffix: ".html"
