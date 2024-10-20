@@ -13,7 +13,7 @@ function impactValueToText(impactNumber) {
   }
 }
 function calculateImpact() {
-  const selectedFood = document.querySelectorAll('.foodmeter .food-selected');
+  const selectedFood = document.querySelectorAll('.foodmeter .food-selected')
 
   let totalImpact = 0;
   selectedFood.forEach((food) => {
