@@ -156,8 +156,7 @@ button {
   display: inline-block;
   box-sizing: border-box;
   text-decoration: none;
-  border: 2px solid transparent;
-  padding: 5px 30px;
+  padding: 8px 30px;
   text-align: center;
   font-style: normal;
   font-weight: 600;
@@ -169,15 +168,43 @@ button {
   overflow: hidden;
   text-overflow: ellipsis;
   border-radius: 30px;
-  transition: background-color 0.3s ease-out;
+  transition: all .3s;
+  position: relative;
+  z-index: 1;
 }
 
-a.button:hover,
-a.button:focus,
-button:hover,
-button:focus {
+a.button:any-link:after,
+button:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--link-color);
+  border-radius: 30px;
+  z-index: -2;
+}
+
+a.button:any-link:before,
+button:before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
   background-color: var(--link-hover-color);
-  cursor: pointer;
+  border-radius: 30px;
+  transition: all .3s;
+  z-index: -1;
+}
+
+a.button:any-link:hover:before,
+a.button:any-link:focus:before,
+button:hover:before,
+button:focus:before {
+  width: 100%;
 }
 
 button:disabled,
