@@ -15,10 +15,10 @@ export default async function decorate(block) {
     if (pageFragmentSection) {
       const teaserFragmentParent = block.closest('.teaser-fragment');
       const heroContainer = pageFragment.querySelector('.hero-container');
-      const columnsContainer = pageFragment.querySelector('.columns-container');
+      const contentWrapper = pageFragment.querySelector('.default-content-wrapper');
 
       const pictureElement = heroContainer ? heroContainer.querySelector('picture') : null;
-      const h1Element = columnsContainer ? columnsContainer.querySelector('h1') : null;
+      const h1Element = contentWrapper ? contentWrapper.querySelector('h1') : null;
 
       // Clear out the existing content in the page-fragment
       teaserFragmentParent.innerHTML = '';
