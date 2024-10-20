@@ -173,8 +173,8 @@ button {
   z-index: 1;
 }
 
-a.button:any-link:after,
-button:after {
+a.button:any-link::after,
+button::after {
   content: '';
   position: absolute;
   bottom: 0;
@@ -186,8 +186,8 @@ button:after {
   z-index: -2;
 }
 
-a.button:any-link:before,
-button:before {
+a.button:any-link::before,
+button::before {
   content: '';
   position: absolute;
   bottom: 0;
@@ -200,10 +200,10 @@ button:before {
   z-index: -1;
 }
 
-a.button:any-link:hover:before,
-a.button:any-link:focus:before,
-button:hover:before,
-button:focus:before {
+a.button:any-link:hover::before,
+a.button:any-link:focus::before,
+button:hover::before,
+button:focus::before {
   width: 100%;
 }
 
