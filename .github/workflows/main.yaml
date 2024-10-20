@@ -1,33 +1,14 @@
-name: Build and Deploy
-
-on:
-  push:
-    branches:
-      - int
-      - develop
-      - main
+name: Build
+on: [push]
 
 jobs:
   build:
     runs-on: ubuntu-latest
-    environment: main
-    env:
-      API_URL: ${{ secrets.API_URL }}
     steps:
-      - name: Check out the repository
-        uses: actions/checkout@v2
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v2
+      - uses: actions/checkout@v4
+      - name: Use Node.js 20
+        uses: actions/setup-node@v4
         with:
-          node-version: '16'
-
-      - name: Set API_URL environment variable
-        run: echo "API_URL=${{ secrets.API_URL }}" >> .env
-
-      - name: Access API_URL in Node.js
-        run: |
-          node -e "console.log('API_URL from env:', process.env.API_URL);"
-
+          node-version: 16
       - run: npm ci
       - run: npm run lint
