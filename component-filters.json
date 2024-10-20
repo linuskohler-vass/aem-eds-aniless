@@ -34,7 +34,8 @@
       "foodmeter",
       "foodsummary",
       "pageFragment",
-      "teaserFragment"
+      "teaserFragment",
+      "taglist"
     ]
   },
   {
@@ -47,6 +48,12 @@
     "id": "foodmeter",
     "components": [
       "food"
+    ]
+  },
+  {
+    "id": "taglist",
+    "components": [
+      "tag"
     ]
   }
 ]

@@ -341,5 +341,38 @@
         "label": "Text"
       }
     ]
+  },
+  {
+    "id": "tag",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "text",
+        "value": "",
+        "label": "Text"
+      },
+      {
+        "component": "select",
+        "name": "type",
+        "value": "default",
+        "label": "Type",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "default",
+            "value": "default"
+          },
+          {
+            "name": "dark",
+            "value": "dark"
+          },
+          {
+            "name": "orange",
+            "value": "orange"
+          }
+        ]
+      }
+    ]
   }
 ]
