@@ -1,0 +1,16 @@
+.tag {
+  background-color: var(--light-color);
+  border-radius: var(--border-radius);
+  padding: 4px 16px;
+  width: max-content;
+}
+
+.tag-dark {
+  color: var(--background-color);
+  background-color: var(--text-color);
+}
+
+.tag-orange {
+  color: var(--background-color);
+  background-color: var(--link-hover-color);
+}

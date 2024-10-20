@@ -15,16 +15,22 @@ export default async function decorate(block) {
     if (pageFragmentSection) {
       const teaserFragmentParent = block.closest('.teaser-fragment');
       const heroContainer = pageFragment.querySelector('.hero-container');
+      const taglistWrapper = pageFragment.querySelector('.taglist-wrapper');
       const contentWrapper = pageFragment.querySelector('.default-content-wrapper');
 
       const pictureElement = heroContainer ? heroContainer.querySelector('picture') : null;
       const h1Element = contentWrapper ? contentWrapper.querySelector('h1') : null;
+      const tagElement = taglistWrapper ? taglistWrapper.querySelector('.tag') : null;
 
       // Clear out the existing content in the page-fragment
       teaserFragmentParent.innerHTML = '';
 
       if (pictureElement) {
         teaserFragmentParent.appendChild(pictureElement);
+      }
+
+      if (tagElement) {
+        teaserFragmentParent.appendChild(tagElement);
       }
 
       if (h1Element) {

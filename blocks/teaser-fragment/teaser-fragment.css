@@ -17,24 +17,24 @@
   flex-wrap: wrap;
   max-width: 1200px;
   margin: auto;
-  gap: 60px;
+  gap: 30px;
 }
 
 .teaser-fragment-container > .teaser-fragment-wrapper {
-  min-height: 500px;
   max-width: 100%;
   display: flex;
 }
 
 @media (width >= 900px) {
   .teaser-fragment-container > .teaser-fragment-wrapper {
-    max-width: 360px;
+    max-width: 380px;
+    min-height: 600px;
   }
 }
 
 .teaser-fragment {
   border: 1px solid var(--dark-color);
-  background-color: var(--background-color);
+  background-color: var(--lightest-color);
   border-radius: var(--border-radius);
   display: flex;
   flex-grow: 1;
@@ -49,6 +49,10 @@
   border-radius: var(--border-radius) var(--border-radius) 0 0;
 }
 
+.teaser-fragment .tag {
+  margin: 32px 32px 16px;
+}
+
 .teaser-fragment h1 {
   margin: 16px 32px;
   font-size: var(--heading-font-size-m);
@@ -56,5 +60,5 @@
 }
 
 .teaser-fragment a.button:any-link {
-  margin: 16px 32px;
+  margin: 16px 32px 32px;
 }
