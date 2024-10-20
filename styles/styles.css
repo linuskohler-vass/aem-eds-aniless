@@ -18,7 +18,7 @@
   --lightest-color: #FFFAF2;
   --light-color: #F0E6D8;
   --dark-color: #BFAE95;
-  --text-color: black;
+  --text-color: #2F2927;
 
   /* fonts */
   --body-font-family: roboto, roboto-fallback;
@@ -169,6 +169,7 @@ button {
   overflow: hidden;
   text-overflow: ellipsis;
   border-radius: 30px;
+  transition: background-color 0.3s ease-out;
 }
 
 a.button:hover,

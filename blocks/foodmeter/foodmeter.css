@@ -9,6 +9,7 @@
 
 .foodmeter .food {
   border: 1px solid var(--dark-color);
+  border-radius: var(--border-radius);
   background-color: var(--background-color);
   cursor: pointer;
   transition: all 0.3s;
