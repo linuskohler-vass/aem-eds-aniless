@@ -9,12 +9,15 @@ function dispatchSelectionChange() {
   document.dispatchEvent(event);
 }
 
-async function loadTitleFromPlaceholders() {
+async function loadTitleFromPlaceholders(foodElement) {
   const placeholders = await fetchPlaceholders();
+  console.log(placeholders);
   const { titleFoodSelection, titleFoodUnselection } = placeholders;
 
   titleFoodSelectionText = titleFoodSelection;
   titleFoodUnSelectionText = titleFoodUnselection;
+
+  foodElement.title = titleFoodSelectionText;
 }
 
 export default function decorate(block) {
@@ -24,7 +27,7 @@ export default function decorate(block) {
     const li = document.createElement('li');
     li.className = 'food';
 
-    loadTitleFromPlaceholders();
+    loadTitleFromPlaceholders(li);
 
     moveInstrumentation(row, li);
     while (row.firstElementChild) li.append(row.firstElementChild);
@@ -32,8 +35,6 @@ export default function decorate(block) {
     li.children[1].className = 'food__body';
     li.children[2].className = 'food__impact';
     ul.append(li);
-
-    li.title = titleFoodSelectionText;
 
     li.addEventListener('click', (event) => {
       event.currentTarget.classList.toggle('food-selected');
