@@ -110,9 +110,16 @@ export default async function decorate(block) {
 
   const navBrand = nav.querySelector('.nav-brand');
   const brandLink = navBrand.querySelector('.button');
+  const brandIcon = navBrand.querySelector('picture');
   if (brandLink) {
-    brandLink.className = '';
+    brandLink.className = 'brand-link';
     brandLink.closest('.button-container').className = '';
+
+    if (brandIcon) {
+      brandLink.innerHTML = '';
+      brandLink.appendChild(brandIcon);
+      navBrand.querySelectorAll('p')[1].remove();
+    }
   }
 
   const navSections = nav.querySelector('.nav-sections');

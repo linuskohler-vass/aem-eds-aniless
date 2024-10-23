@@ -78,6 +78,11 @@ header nav .nav-hamburger button {
   white-space: initial;
 }
 
+header nav .nav-hamburger button::before,
+header nav .nav-hamburger button::after {
+  background-color: unset;
+}
+
 header nav .nav-hamburger-icon,
 header nav .nav-hamburger-icon::before,
 header nav .nav-hamburger-icon::after {
@@ -145,10 +150,17 @@ header .nav-brand {
   font-size: var(--heading-font-size-s);
   font-weight: 700;
   line-height: 1;
+  display: none;
+}
+
+@media (width >= 900px) {
+  header nav .nav-brand {
+    display: block;
+  }
 }
 
 header nav .nav-brand img {
-  width: 128px;
+  width: 48px;
   height: auto;
 }
 

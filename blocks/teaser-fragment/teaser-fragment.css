@@ -54,7 +54,7 @@
 }
 
 .teaser-fragment h1 {
-  margin: 16px 32px;
+  margin: 16px 32px auto;
   font-size: var(--heading-font-size-m);
   font-family: var(--body-font-family);
 }
