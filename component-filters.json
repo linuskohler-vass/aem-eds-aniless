@@ -35,7 +35,8 @@
       "foodsummary",
       "pageFragment",
       "teaserFragment",
-      "taglist"
+      "taglist",
+      "fullsizeteaser"
     ]
   },
   {
