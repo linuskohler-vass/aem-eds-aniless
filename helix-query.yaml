@@ -3,14 +3,16 @@ indices:
   articles:
     include:
       - /blogs/**
+    exclude:
+      - /blogs
     target: /article-index.json
     properties:
       title:
         select: head > meta[property="og:title"]
         value: attribute(el, "content")
       description:
-        select: body main .default-content-wrapper p:first-child
-        value: attribute(el, "content")
+        select: main h1 + p
+        value: textContent(el)
       category:
-        select: body main .taglist > .tag
-        value: attribute(el, "content")
+        selectFirst: main .taglist > div > div
+        value: textContent(el)
