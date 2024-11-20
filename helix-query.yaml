@@ -1,0 +1,16 @@
+version: 1
+indices:
+  articles:
+    include:
+      - /blogs/**
+    target: /article-index.json
+    properties:
+      title:
+        select: head > meta[property="og:title"]
+        value: attribute(el, "content")
+      description:
+        select: body main .default-content-wrapper p:first-child
+        value: attribute(el, "content")
+      category:
+        select: body main .taglist > .tag
+        value: attribute(el, "content")
