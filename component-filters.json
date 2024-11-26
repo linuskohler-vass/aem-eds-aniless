@@ -36,7 +36,8 @@
       "pageFragment",
       "teaserFragment",
       "taglist",
-      "fullsizeteaser"
+      "fullsizeteaser",
+      "form"
     ]
   },
   {

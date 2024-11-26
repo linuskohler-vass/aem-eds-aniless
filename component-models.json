@@ -442,5 +442,17 @@
         "label": "Linktext 2"
       }
     ]
+  },
+  {
+    "id": "form",
+    "fields": [
+      {
+        "component": "text",
+        "name": "form-test",
+        "value": "",
+        "label": "Form Test",
+        "valueType": "string"
+      }
+    ]
   }
 ]
