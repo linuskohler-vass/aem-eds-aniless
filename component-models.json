@@ -447,10 +447,17 @@
     "id": "form",
     "fields": [
       {
-        "component": "text",
-        "name": "form-test",
+        "component": "text-area",
+        "name": "form",
         "value": "",
-        "label": "Form Test",
+        "label": "Form Label",
+        "valueType": "string"
+      },
+      {
+        "component": "text-input",
+        "name": "firstName",
+        "value": "",
+        "label": "First Name",
         "valueType": "string"
       }
     ]
