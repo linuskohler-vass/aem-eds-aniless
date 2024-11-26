@@ -447,18 +447,32 @@
     "id": "form",
     "fields": [
       {
-        "component": "text-area",
-        "name": "form",
+        "component": "text",
+        "valueType": "string",
+        "name": "href1",
         "value": "",
-        "label": "Form Label",
-        "valueType": "string"
+        "label": "Link"
       },
       {
-        "component": "text-input",
-        "name": "firstName",
+        "component": "text",
+        "valueType": "string",
+        "name": "linktext1",
         "value": "",
-        "label": "First Name",
-        "valueType": "string"
+        "label": "Linktext"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "href2",
+        "value": "",
+        "label": "Link 2"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "linktext2",
+        "value": "",
+        "label": "Linktext 2"
       }
     ]
   }
