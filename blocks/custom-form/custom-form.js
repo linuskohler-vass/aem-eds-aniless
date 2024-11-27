@@ -54,6 +54,6 @@ export default async function decorate(block) {
     form.appendChild(submitButton);
   }
 
-  block.innerHTML = ''; // Clear the original block content
+  //block.innerHTML = ''; // Clear the original block content
   block.appendChild(form);// For demonstration purposes
 }
