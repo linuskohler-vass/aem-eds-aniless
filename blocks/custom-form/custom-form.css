@@ -13,3 +13,8 @@
 .custom-form button {
   font-size: var(--body-font-size-m);
 }
+
+/* hide the form field divs in editor. They are still needed to edit the fields */
+.custom-form > [data-block-name="custom-form"] > div {
+  display: none;
+}

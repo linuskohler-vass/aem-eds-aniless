@@ -34,7 +34,7 @@ export default async function decorate(block) {
   const linkElement = block.querySelector('a[href]');
   if (linkElement) {
     form.action = linkElement.href;
-    form.method = 'POST'; // Set method to POST as per requirements
+    form.method = 'POST';
   }
 
   const inputContainers = block.querySelectorAll('.custom-form > div:nth-child(n+3)');
@@ -54,6 +54,10 @@ export default async function decorate(block) {
     form.appendChild(submitButton);
   }
 
-  //block.innerHTML = ''; // Clear the original block content
-  block.appendChild(form);// For demonstration purposes
+  // Clear the original block content of we are not in the editor
+  if (!block.querySelector('[data-block-name="custom-form"]')) {
+    block.innerHTML = '';
+  }
+
+  block.appendChild(form);
 }
