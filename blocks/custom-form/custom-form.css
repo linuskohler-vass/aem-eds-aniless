@@ -1,0 +1,15 @@
+.custom-form .input-wrapper {
+  margin-bottom: 32px;
+}
+
+.custom-form .input-wrapper label {
+  margin-right: 8px;
+}
+
+.custom-form .input-wrapper input {
+  font-size: var(--body-font-size-m);
+}
+
+.custom-form button {
+  font-size: var(--body-font-size-m);
+}
