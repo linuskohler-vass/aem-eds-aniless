@@ -1,0 +1,90 @@
+{
+  "definitions": [
+    {
+      "title": "Fullsize Teaser",
+      "id": "fullsizeteaser",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block",
+            "template": {
+              "name": "Fullsize Teaser",
+              "model": "fullsizeteaser"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "fullsizeteaser",
+      "fields": [
+        {
+          "component": "reference",
+          "valueType": "string",
+          "name": "image",
+          "label": "Image",
+          "multi": false
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "imageAlt",
+          "label": "Alt",
+          "value": ""
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "tag",
+          "value": "",
+          "label": "Tag"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "heading",
+          "label": "Heading Text",
+          "value": ""
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "text",
+          "value": "",
+          "label": "Text"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "href1",
+          "value": "",
+          "label": "Link"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "linktext1",
+          "value": "",
+          "label": "Linktext"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "href2",
+          "value": "",
+          "label": "Link 2"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "linktext2",
+          "value": "",
+          "label": "Linktext 2"
+        }
+      ]
+    }
+  ],
+  "filters": []
+}

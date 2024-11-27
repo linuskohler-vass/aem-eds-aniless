@@ -6,19 +6,6 @@
     ]
   },
   {
-    "id": "columns",
-    "components": []
-  },
-  {
-    "id": "column",
-    "components": [
-      "text",
-      "image",
-      "button",
-      "title"
-    ]
-  },
-  {
     "id": "section",
     "components": [
       "text",
@@ -28,22 +15,37 @@
       "hero",
       "cards",
       "columns",
-      "quote",
-      "rating",
-      "jobteaser",
+      "fragment",
       "foodmeter",
       "foodsummary",
-      "pageFragment",
-      "teaserFragment",
-      "taglist",
+      "form",
       "fullsizeteaser",
-      "form"
+      "jobteaser",
+      "pageFragment",
+      "rating",
+      "taglist",
+      "teaserFragment"
     ]
   },
   {
     "id": "cards",
     "components": [
       "card"
+    ]
+  },
+  {
+    "id": "columns",
+    "components": [
+      "column"
+    ]
+  },
+  {
+    "id": "column",
+    "components": [
+      "text",
+      "image",
+      "button",
+      "title"
     ]
   },
   {

@@ -1,20 +1,32 @@
 [
   {
+    "id": "image",
+    "fields": [
+      {
+        "component": "reference",
+        "name": "image",
+        "label": "Image",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "name": "imageAlt",
+        "label": "Alt Text"
+      }
+    ]
+  },
+  {
     "id": "title",
     "fields": [
       {
         "component": "text",
-        "valueType": "string",
-        "name": "jcr:title",
-        "value": "",
-        "label": "Text"
+        "name": "title",
+        "label": "Title"
       },
       {
         "component": "select",
-        "name": "type",
-        "value": "h1",
-        "label": "Type",
-        "valueType": "string",
+        "name": "titleType",
+        "label": "Title Type",
         "options": [
           {
             "name": "h1",
@@ -45,54 +57,27 @@
     ]
   },
   {
-    "id": "image",
-    "fields": [
-      {
-        "component": "reference",
-        "valueType": "string",
-        "name": "fileReference",
-        "label": "Image",
-        "multi": false
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "alt",
-        "value": "Default alt",
-        "label": "Alt Text"
-      }
-    ]
-  },
-  {
     "id": "button",
     "fields": [
       {
-        "component": "text",
-        "valueType": "string",
-        "name": "href",
-        "value": "",
+        "component": "aem-content",
+        "name": "link",
         "label": "Link"
       },
       {
         "component": "text",
-        "valueType": "string",
-        "name": "text",
-        "value": "",
+        "name": "linkText",
         "label": "Text"
       },
       {
         "component": "text",
-        "valueType": "string",
-        "name": "title",
-        "value": "",
+        "name": "linkTitle",
         "label": "Title"
       },
       {
         "component": "select",
-        "name": "type",
-        "value": "",
+        "name": "linkType",
         "label": "Type",
-        "valueType": "string",
         "options": [
           {
             "name": "default",
@@ -111,21 +96,18 @@
     ]
   },
   {
-    "id": "columns",
+    "id": "section",
     "fields": [
       {
-        "component": "text",
-        "valueType": "number",
-        "name": "columns",
-        "value": "",
-        "label": "Columns"
-      },
-      {
-        "component": "text",
-        "valueType": "number",
-        "name": "rows",
-        "value": "",
-        "label": "Rows"
+        "component": "multiselect",
+        "name": "style",
+        "label": "Style",
+        "options": [
+          {
+            "name": "Highlight",
+            "value": "highlight"
+          }
+        ]
       }
     ]
   },
@@ -149,124 +131,21 @@
     ]
   },
   {
-    "id": "section",
+    "id": "columns",
     "fields": [
       {
         "component": "text",
-        "name": "style",
+        "valueType": "number",
+        "name": "columns",
         "value": "",
-        "label": "Style",
-        "valueType": "string"
-      }
-    ]
-  },
-  {
-    "id": "hero",
-    "fields": [
-      {
-        "component": "reference",
-        "valueType": "string",
-        "name": "image",
-        "label": "Image",
-        "multi": false
+        "label": "Columns"
       },
       {
         "component": "text",
-        "valueType": "string",
-        "name": "imageAlt",
-        "label": "Alt",
-        "value": ""
-      },
-      {
-        "component": "richtext",
-        "name": "text",
+        "valueType": "number",
+        "name": "rows",
         "value": "",
-        "label": "Text",
-        "valueType": "string"
-      }
-    ]
-  },
-  {
-    "id": "quote",
-    "fields": [
-      {
-        "component": "text-area",
-        "name": "quote",
-        "value": "",
-        "label": "Quote",
-        "valueType": "string"
-      },
-      {
-        "component": "text-input",
-        "valueType": "string",
-        "name": "author",
-        "label": "Author",
-        "value": ""
-      }
-    ]
-  },
-  {
-    "id": "jobteaser",
-    "fields": [
-      {
-        "component": "text-input",
-        "name": "title",
-        "value": "",
-        "label": "Title",
-        "valueType": "string"
-      }
-    ]
-  },
-  {
-    "id": "rating",
-    "fields": [
-      {
-        "component": "reference",
-        "valueType": "string",
-        "name": "image",
-        "label": "Image",
-        "multi": false
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "imageAlt",
-        "label": "Alt",
-        "value": ""
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "text",
-        "label": "Rating text",
-        "value": "Here comes my ratings text..."
-      },
-      {
-        "component": "select",
-        "name": "stars",
-        "value": "",
-        "label": "Stars",
-        "valueType": "string",
-        "options": [
-          {
-            "name": "1",
-            "value": "1"
-          },
-          {
-            "name": "2",
-            "value": "2"
-          },
-          {
-            "name": "3",
-            "value": "3"
-          },          {
-            "name": "4",
-            "value": "4"
-          },          {
-            "name": "5",
-            "value": "5"
-          }
-        ]
+        "label": "Rows"
       }
     ]
   },
@@ -309,69 +188,45 @@
     ]
   },
   {
-    "id": "pageFragment",
+    "id": "form",
     "fields": [
-      {
-        "component": "aem-content",
-        "name": "pageFragmentPath",
-        "label": "Page Fragment Path"
-      }
-    ]
-  },
-  {
-    "id": "teaserFragment",
-    "fields": [
-      {
-        "component": "aem-content",
-        "name": "teaserFragmentPath",
-        "label": "Teaser Fragment Path"
-      },
       {
         "component": "text",
         "valueType": "string",
-        "name": "href",
+        "name": "href1",
         "value": "",
         "label": "Link"
       },
       {
         "component": "text",
         "valueType": "string",
-        "name": "text",
+        "name": "linktext1",
         "value": "",
-        "label": "Text"
+        "label": "Linktext"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "href2",
+        "value": "",
+        "label": "Link 2"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "linktext2",
+        "value": "",
+        "label": "Linktext 2"
       }
     ]
   },
   {
-    "id": "tag",
+    "id": "fragment",
     "fields": [
       {
-        "component": "text",
-        "valueType": "string",
-        "name": "text",
-        "value": "",
-        "label": "Text"
-      },
-      {
-        "component": "select",
-        "name": "type",
-        "value": "default",
-        "label": "Type",
-        "valueType": "string",
-        "options": [
-          {
-            "name": "default",
-            "value": "default"
-          },
-          {
-            "name": "dark",
-            "value": "dark"
-          },
-          {
-            "name": "orange",
-            "value": "orange"
-          }
-        ]
+        "component": "aem-content",
+        "name": "reference",
+        "label": "Reference"
       }
     ]
   },
@@ -444,35 +299,162 @@
     ]
   },
   {
-    "id": "form",
+    "id": "hero",
+    "fields": [
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "image",
+        "label": "Image",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "imageAlt",
+        "label": "Alt",
+        "value": ""
+      },
+      {
+        "component": "richtext",
+        "name": "text",
+        "value": "",
+        "label": "Text",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "jobteaser",
+    "fields": [
+      {
+        "component": "text-input",
+        "name": "title",
+        "value": "",
+        "label": "Title",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "pageFragment",
+    "fields": [
+      {
+        "component": "aem-content",
+        "name": "pageFragmentPath",
+        "label": "Page Fragment Path"
+      }
+    ]
+  },
+  {
+    "id": "rating",
+    "fields": [
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "image",
+        "label": "Image",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "imageAlt",
+        "label": "Alt",
+        "value": ""
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "text",
+        "label": "Rating text",
+        "value": "Here comes my ratings text..."
+      },
+      {
+        "component": "select",
+        "name": "stars",
+        "value": "",
+        "label": "Stars",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "1",
+            "value": "1"
+          },
+          {
+            "name": "2",
+            "value": "2"
+          },
+          {
+            "name": "3",
+            "value": "3"
+          },
+          {
+            "name": "4",
+            "value": "4"
+          },
+          {
+            "name": "5",
+            "value": "5"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "tag",
     "fields": [
       {
         "component": "text",
         "valueType": "string",
-        "name": "href1",
+        "name": "text",
+        "value": "",
+        "label": "Text"
+      },
+      {
+        "component": "select",
+        "name": "type",
+        "value": "default",
+        "label": "Type",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "default",
+            "value": "default"
+          },
+          {
+            "name": "dark",
+            "value": "dark"
+          },
+          {
+            "name": "orange",
+            "value": "orange"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "teaserFragment",
+    "fields": [
+      {
+        "component": "aem-content",
+        "name": "teaserFragmentPath",
+        "label": "Teaser Fragment Path"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "href",
         "value": "",
         "label": "Link"
       },
       {
         "component": "text",
         "valueType": "string",
-        "name": "linktext1",
+        "name": "text",
         "value": "",
-        "label": "Linktext"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "href2",
-        "value": "",
-        "label": "Link 2"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "linktext2",
-        "value": "",
-        "label": "Linktext 2"
+        "label": "Text"
       }
     ]
   }

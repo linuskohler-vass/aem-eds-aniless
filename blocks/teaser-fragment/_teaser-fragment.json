@@ -1,0 +1,46 @@
+{
+  "definitions": [
+    {
+      "title": "Teaser Fragment",
+      "id": "teaserFragment",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block",
+            "template": {
+              "name": "Teaser Fragment",
+              "model": "teaserFragment"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "teaserFragment",
+      "fields": [
+        {
+          "component": "aem-content",
+          "name": "teaserFragmentPath",
+          "label": "Teaser Fragment Path"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "href",
+          "value": "",
+          "label": "Link"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "text",
+          "value": "",
+          "label": "Text"
+        }
+      ]
+    }
+  ],
+  "filters": []
+}
