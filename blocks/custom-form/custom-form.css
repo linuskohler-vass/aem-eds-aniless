@@ -15,6 +15,6 @@
 }
 
 /* hide the form field divs in editor. They are still needed to edit the fields */
-.custom-form > [data-block-name="custom-form"] > div {
+.custom-form[data-aue-resource] > div {
   display: none;
 }

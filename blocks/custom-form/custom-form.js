@@ -55,7 +55,7 @@ export default async function decorate(block) {
   }
 
   // Clear the original block content of we are not in the editor
-  if (!block.hasAttribute('data-block-name')) {
+  if (!block.hasAttribute('data-aue-resource')) {
     block.innerHTML = '';
   }
 
