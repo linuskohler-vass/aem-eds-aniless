@@ -54,7 +54,7 @@ export default async function decorate(block) {
     form.appendChild(submitButton);
   }
 
-  // Clear the original block content of we are not in the editor
+  // Clear the original block content if we are not in the editor
   if (!block.hasAttribute('data-aue-resource')) {
     block.innerHTML = '';
   }
