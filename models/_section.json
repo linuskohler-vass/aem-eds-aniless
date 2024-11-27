@@ -53,7 +53,8 @@
         "pageFragment",
         "rating",
         "taglist",
-        "teaserFragment"
+        "teaserFragment",
+        "customform"
       ]
     }
   ]
