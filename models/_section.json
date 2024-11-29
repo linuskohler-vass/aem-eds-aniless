@@ -29,6 +29,13 @@
               "value": "highlight"
             }
           ]
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "anchorId",
+          "value": "",
+          "label": "Anchor Id"
         }
       ]
     }
@@ -54,7 +61,8 @@
         "rating",
         "taglist",
         "teaserFragment",
-        "customform"
+        "customform",
+        "anchorNavigation"
       ]
     }
   ]

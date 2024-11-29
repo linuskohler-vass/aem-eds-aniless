@@ -108,6 +108,25 @@
             "value": "highlight"
           }
         ]
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "anchorId",
+        "value": "",
+        "label": "Anchor Id"
+      }
+    ]
+  },
+  {
+    "id": "anchorNavigation",
+    "fields": [
+      {
+        "component": "text",
+        "name": "text",
+        "value": "",
+        "label": "Navigation label",
+        "valueType": "string"
       }
     ]
   },

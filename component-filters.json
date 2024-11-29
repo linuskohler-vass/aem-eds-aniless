@@ -25,7 +25,8 @@
       "rating",
       "taglist",
       "teaserFragment",
-      "customform"
+      "customform",
+      "anchorNavigation"
     ]
   },
   {
