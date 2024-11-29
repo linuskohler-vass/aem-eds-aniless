@@ -1,0 +1,20 @@
+.anchor-navigation-container {
+  background-color: var(--lightest-color);
+}
+
+.anchor-navigation-label p {
+  margin: 0;
+}
+
+
+.anchor-navigation {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+@media (width >= 900px) {
+  .anchor-navigation {
+    flex-direction: row;
+  }
+}
