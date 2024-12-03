@@ -42,7 +42,9 @@ export default async function decorate(block) {
   inputContainers.forEach((inputContainer) => {
     const inputWrapper = setupInputElement(inputContainer);
 
-    form.appendChild(inputWrapper);
+    if (inputWrapper) {
+      form.appendChild(inputWrapper);
+    }
   });
 
   const submitText = block.querySelector('.custom-form > div:nth-child(2) div')?.textContent.trim();
@@ -54,7 +56,31 @@ export default async function decorate(block) {
     form.appendChild(submitButton);
   }
 
-  // Clear the original block content if we are not in the editor
+  form.addEventListener('submit', async (event) => {
+    event.preventDefault();
+    const formData = new FormData(form);
+    const jsonData = Object.fromEntries(formData.entries());
+    const actionUrl = form.action || '/bin/eds-backend-demo/custom-form-data';
+    try {
+      const response = await fetch(actionUrl, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(jsonData),
+      });
+      if (response.ok) {
+        const responseData = await response.json();
+        console.log(responseData.message);
+      } else {
+        const errorData = await response.json();
+        console.error('Form submission failed:', errorData.error || response.statusText);
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
+    }
+  });
+
   if (!block.hasAttribute('data-aue-resource')) {
     block.innerHTML = '';
   }
