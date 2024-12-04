@@ -37,6 +37,12 @@
       "id": "customform",
       "fields": [
         {
+          "component": "text",
+          "valueType": "string",
+          "name": "form-id",
+          "label": "Form Id"
+        },
+        {
           "component": "aem-content",
           "valueType": "string",
           "name": "submit-link",
@@ -92,6 +98,12 @@
               "value": "checkbox"
             }
           ]
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "max-length",
+          "label": "Max Length"
         }
       ]
     }
