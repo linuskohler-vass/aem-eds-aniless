@@ -1,9 +1,9 @@
 function setupInputElement(inputContainer) {
   const inputData = inputContainer.querySelectorAll('div');
-  if (inputData.length === 3) {
-    const [id, label, type] = [...inputData].map((div) => div.textContent.trim());
+  if (inputData.length === 4) {
+    const [id, label, type, maxLength] = [...inputData].map((div) => div.textContent.trim());
 
-    if (id && label && type) {
+    if (id && label && type && maxLength) {
       const inputWrapper = document.createElement('div');
       inputWrapper.className = 'input-wrapper';
 
@@ -15,6 +15,9 @@ function setupInputElement(inputContainer) {
       inputElement.type = type;
       inputElement.id = id;
       inputElement.name = id;
+      if (maxLength > 0) {
+        inputElement.maxLength = maxLength;
+      }
 
       inputWrapper.classList.add(`type-${inputElement.type}`);
 
@@ -60,6 +63,8 @@ export default async function decorate(block) {
     event.preventDefault();
     const formData = new FormData(form);
     const jsonData = Object.fromEntries(formData.entries());
+    jsonData.urlPath = window.location.pathname;
+
     const actionUrl = form.action || '/bin/eds-backend-demo/custom-form-data';
     try {
       const response = await fetch(actionUrl, {

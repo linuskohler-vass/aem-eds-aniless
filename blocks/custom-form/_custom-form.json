@@ -103,7 +103,8 @@
           "component": "text",
           "valueType": "string",
           "name": "max-length",
-          "label": "Max Length"
+          "label": "Max Length",
+          "value": "0"
         }
       ]
     }
