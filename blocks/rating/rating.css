@@ -1,18 +1,37 @@
 .rating {
   flex: 1 0 auto;
-  display: flex;
+  display: grid;
+  grid-template-areas: "image" "text" "rating";
   position: relative;
   gap: 32px;
   padding: 32px;
-  flex-direction: column;
   background-color: var(--background-color);
   box-shadow: var(--box-shadow);
   border-radius: var(--border-radius);
 }
 
+@media (width >= 600px) {
+  .rating {
+    grid-template-areas: "image text" "image rating";
+  }
+}
+
+.rating__image {
+  grid-area: image;
+}
+
+.rating__review {
+  grid-area: text;
+}
+
+.rating__stars {
+  grid-area: rating;
+}
+
 .rating__image img {
-    border-radius: 50%;
-    max-width: 200px;
+  grid-area: image;
+  border-radius: 50%;
+  max-width: 200px;
 }
 
 .rating__review p {
