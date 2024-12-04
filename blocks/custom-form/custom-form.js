@@ -50,7 +50,7 @@ export default async function decorate(block) {
     }
   });
 
-  const submitText = block.querySelector('.custom-form > div:nth-child(2) div')?.textContent.trim();
+  const submitText = block.querySelector('.custom-form > div:nth-child(3) div')?.textContent.trim();
 
   if (submitText) {
     const submitButton = document.createElement('button');
