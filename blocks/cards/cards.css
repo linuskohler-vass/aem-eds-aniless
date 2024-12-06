@@ -18,6 +18,7 @@
 }
 
 .cards .cards-card-image {
+  background: radial-gradient(circle, rgb(255 250 242) 0%, rgb(191 174 149) 100%);
   line-height: 0;
 }
 

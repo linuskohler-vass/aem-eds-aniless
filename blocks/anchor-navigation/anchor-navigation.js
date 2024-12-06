@@ -17,7 +17,7 @@ export default function decorate(block) {
     // Create a new <a> element
     const anchorLink = document.createElement('a');
     anchorLink.href = `#${anchorId}`;
-    anchorLink.textContent = `Go to ${anchorId}`;
+    anchorLink.textContent = `${anchorId}`;
     anchorLink.className = 'anchor-link';
 
     block.appendChild(anchorLink);
