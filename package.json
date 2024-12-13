@@ -5,8 +5,9 @@
   "description": "Demo project to showcase AEM based EDS",
   "scripts": {
     "start:scss": "npm run watch:scss",
+    "start:global-scss": "npm run watch:global-scss",
     "start:aem": "aem up",
-    "start": "concurrently \"npm run start:aem\" \"npm run start:scss\"",
+    "start": "concurrently \"npm run start:aem\" \"npm run start:scss\" \"npm run start:global-scss\"",
     "lint:js": "eslint . --ext .json,.js",
     "lint:css": "stylelint blocks/**/*.css styles/*.css",
     "lint": "npm run lint:js && npm run lint:css",
@@ -16,7 +17,9 @@
     "build:json:filters": "merge-json-cli -i \"models/_component-filters.json\" -o \"component-filters.json\"",
     "prepare": "husky",
     "build:scss": "sass blocks:blocks --no-source-map --style=compressed",
-    "watch:scss": "chokidar 'blocks/**/*.scss' -c 'npm run build:scss'"
+    "watch:scss": "chokidar 'blocks/**/*.scss' -c 'npm run build:scss'",
+    "build:global-scss": "sass styles:styles --no-source-map --style=compressed",
+    "watch:global-scss": "chokidar 'styles/*.scss' -c 'npm run build:global-scss'"
   },
   "repository": {
     "type": "git",

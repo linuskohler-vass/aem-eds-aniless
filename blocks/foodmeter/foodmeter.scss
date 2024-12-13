@@ -1,3 +1,5 @@
+@use '../../styles/variables' as vars;
+
 .foodmeter {
     > ul {
         list-style: none;
@@ -17,7 +19,7 @@
     }
 
     .food {
-        border: 1px solid var(--dark-color);
+        border: 1px solid vars.$special-link-color;
         border-radius: var(--border-radius);
         background-color: var(--background-color);
         cursor: pointer;
@@ -25,7 +27,7 @@
 
         &-selected {
             box-shadow: var(--dark-color) 0 30px 60px -12px inset, var(--dark-color) 0 18px 36px -18px inset;
-            border: 4px solid var(--link-color);
+            border: 4px solid vars.$special-link-color;
 
             .food__body {
                 font-weight: 700;
@@ -40,7 +42,7 @@
             margin: 16px;
             display: flex;
             justify-content: center;
-            color: var(--link-color);
+            color: vars.$special-link-color;
 
             > *:first-child {
                 margin-top: 0;
