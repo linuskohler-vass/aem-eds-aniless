@@ -1,8 +1,8 @@
 {
   "mappings": [
-    "/content/aem-eds-ue-aniless/:/",
-    "/content/aem-eds-ue-aniless/configuration:/.helix/config.json",
+    "/content/aem-eds-aniless/:/",
+    "/content/aem-eds-aniless/configuration:/.helix/config.json",
     "/bin/jobteaser/data:/bin/jobteaser/data",
-    "/content/aem-eds-ue-aniless/placeholders.json"
+    "/content/aem-eds-aniless/placeholders.json"
   ]
 }
