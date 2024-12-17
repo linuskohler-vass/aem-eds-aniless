@@ -4,12 +4,12 @@
   "limit": 2,
   "data": [
     {
-      ":path": "/content/aem-eds-ue-aniless/placeholders/jcr:content/row",
+      ":path": "/content/aem-eds-aniless/placeholders/jcr:content/row",
       "Key": "Title Food Selection",
       "Text": "Select food"
     },
     {
-      ":path": "/content/aem-eds-ue-aniless/placeholders/jcr:content/row_1653332395",
+      ":path": "/content/aem-eds-aniless/placeholders/jcr:content/row_1653332395",
       "Key": "Title Food Unselection",
       "Text": "Deselect food"
     }
