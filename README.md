@@ -2,8 +2,8 @@
 VASS Switzerland demo project to showcase AEM based EDS
 
 ## Environments
-- Preview: https://main--aem-eds-ue-aniless--LikoDevelopment.hlx.page/
-- Live: https://main--aem-eds-ue-aniless--LikoDevelopment.hlx.live/
+- Preview: https://main--aem-eds-ue-aniless--linuskohler-vass.hlx.page/
+- Live: https://main--aem-eds-ue-aniless--linuskohler-vass.hlx.live/
 
 ## Installation
 

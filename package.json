@@ -15,14 +15,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/LikoDevelopment/aem-eds-ue-aniless.git"
+    "url": "git+https://github.com/linuskohler-vass/aem-eds-ue-aniless.git"
   },
   "author": "Adobe",
   "license": "Apache License 2.0",
   "bugs": {
-    "url": "https://github.com/LikoDevelopment/aem-eds-ue-aniless/issues"
+    "url": "https://github.com/linuskohler-vass/aem-eds-ue-aniless/issues"
   },
-  "homepage": "https://github.com/LikoDevelopment/aem-eds-ue-aniless#readme",
+  "homepage": "https://github.com/linuskohler-vass/aem-eds-ue-aniless#readme",
   "devDependencies": {
     "@babel/eslint-parser": "7.25.9",
     "eslint": "8.57.1",
