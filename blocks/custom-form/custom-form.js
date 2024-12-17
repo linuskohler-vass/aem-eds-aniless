@@ -34,6 +34,8 @@ function setupInputElement(inputContainer) {
 export default async function decorate(block) {
   const form = document.createElement('form');
 
+  const formId = block.querySelector('p')?.textContent.trim();
+
   const linkElement = block.querySelector('a[href]');
   if (linkElement) {
     form.action = linkElement.href;
@@ -64,6 +66,8 @@ export default async function decorate(block) {
     const formData = new FormData(form);
     const jsonData = Object.fromEntries(formData.entries());
     jsonData.urlPath = window.location.pathname;
+    jsonData.path = window.location.pathname;
+    jsonData.formId = formId;
 
     const actionUrl = form.action || '/bin/eds-backend-demo/custom-form-data';
     try {
@@ -71,6 +75,10 @@ export default async function decorate(block) {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          Authorization: 'Basic YWRtaW46YWRtaW4=',
+          'CSRF-Token': 'eyJleHAiOjE3MzQ0NDk0MzksImlhdCI6MTczNDQ0ODgzOX0._4QGo6f9CYTdAD_eWmNkrjuwRgA0oAvujXmqFnGE3WY',
+          mode: 'cors',
+          credentials: 'include',
         },
         body: JSON.stringify(jsonData),
       });
