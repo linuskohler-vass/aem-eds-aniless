@@ -65,7 +65,6 @@ export default async function decorate(block) {
     event.preventDefault();
     const formData = new FormData(form);
     const jsonData = Object.fromEntries(formData.entries());
-    jsonData.urlPath = window.location.pathname;
     jsonData.path = window.location.pathname;
     jsonData.formId = formId;
 
@@ -76,7 +75,7 @@ export default async function decorate(block) {
         headers: {
           'Content-Type': 'application/json',
           Authorization: 'Basic YWRtaW46YWRtaW4=',
-          'CSRF-Token': 'eyJleHAiOjE3MzQ0NDk0MzksImlhdCI6MTczNDQ0ODgzOX0._4QGo6f9CYTdAD_eWmNkrjuwRgA0oAvujXmqFnGE3WY',
+          'CSRF-Token': 'eyJleHAiOjE3MzQ1MTc0MjMsImlhdCI6MTczNDUxNjgyM30.H9B2TAZfQmu_fyIF70tLH0dG0Go46z3iToj9rqofRz8',
           mode: 'cors',
           credentials: 'include',
         },
