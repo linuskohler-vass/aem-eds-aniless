@@ -98,7 +98,7 @@ export default async function decorate(block) {
       }
     } catch (error) {
       // eslint-disable-next-line no-console
-      validationMessage.textContent = "Error submitting form.";
+      validationMessage.textContent = 'Error submitting form.';
       console.error('Error submitting form:', error);
     }
   });
