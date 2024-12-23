@@ -52,6 +52,10 @@ export default async function decorate(block) {
     }
   });
 
+  const validationMessage = document.createElement('div');
+  validationMessage.classList.add('validation-message');
+  form.appendChild(validationMessage);
+
   const submitText = block.querySelector('.custom-form > div:nth-child(3) div')?.textContent.trim();
 
   if (submitText) {
@@ -84,14 +88,17 @@ export default async function decorate(block) {
       if (response.ok) {
         const responseData = await response.json();
         // eslint-disable-next-line no-console
+        validationMessage.textContent = responseData.message;
         console.log(responseData.message);
       } else {
         const errorData = await response.json();
         // eslint-disable-next-line no-console
+        validationMessage.textContent = `Form submission failed: ${errorData.message}`;
         console.error('Form submission failed:', errorData.error || response.statusText);
       }
     } catch (error) {
       // eslint-disable-next-line no-console
+      validationMessage.textContent = "Error submitting form.";
       console.error('Error submitting form:', error);
     }
   });
