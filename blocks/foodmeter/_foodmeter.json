@@ -63,7 +63,8 @@
     {
       "id": "foodmeter",
       "components": [
-        "food"
+        "food",
+        "tag"
       ]
     }
   ]

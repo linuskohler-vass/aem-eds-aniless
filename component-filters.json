@@ -47,7 +47,9 @@
       "text",
       "image",
       "button",
-      "title"
+      "title",
+      "food",
+      "tag"
     ]
   },
   {
@@ -59,7 +61,8 @@
   {
     "id": "foodmeter",
     "components": [
-      "food"
+      "food",
+      "tag"
     ]
   },
   {
