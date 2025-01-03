@@ -1,13 +1,27 @@
+.custom-form {
+  width: 50%;
+}
+
 .custom-form .input-wrapper {
   margin-bottom: 32px;
+  display: flex;
 }
 
 .custom-form .input-wrapper label {
   margin-right: 8px;
+  width: 40%;
+  flex-grow: 0;
 }
 
 .custom-form .input-wrapper input {
   font-size: var(--body-font-size-m);
+  width: 60%;
+}
+
+.custom-form .input-wrapper input[type="checkbox"] {
+  width: 30px;
+  height: 30px;
+  margin: 0;
 }
 
 .custom-form button {
