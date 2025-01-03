@@ -110,8 +110,7 @@
           "component": "boolean",
           "valueType": "boolean",
           "name": "required",
-          "label": "Required",
-          "value": "true"
+          "label": "Required"
         }
       ]
     }
