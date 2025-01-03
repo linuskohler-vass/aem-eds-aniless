@@ -111,7 +111,7 @@
           "valueType": "boolean",
           "name": "required",
           "label": "Required",
-          "value": "0"
+          "value": "true"
         }
       ]
     }
