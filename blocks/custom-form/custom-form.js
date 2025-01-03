@@ -2,9 +2,9 @@ function setupInputElement(inputContainer) {
   const inputData = inputContainer.querySelectorAll('div');
   if (inputData.length === 4) {
     const [id, label, type, maxLength,
-      required] = [...inputData].map((div) => div.textContent.trim());
+      requiredInput] = [...inputData].map((div) => div.textContent.trim());
 
-    if (id && label && type && maxLength && required) {
+    if (id && label && type && maxLength && requiredInput) {
       const inputWrapper = document.createElement('div');
       inputWrapper.className = 'input-wrapper';
 
