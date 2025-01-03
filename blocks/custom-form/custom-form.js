@@ -19,7 +19,7 @@ function setupInputElement(inputContainer) {
       if (maxLength > 0) {
         inputElement.maxLength = maxLength;
       }
-      inputElement.required = true;
+      inputElement.required = (requiredInput === 'true');
 
       inputWrapper.classList.add(`type-${inputElement.type}`);
 
