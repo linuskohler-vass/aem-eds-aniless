@@ -204,21 +204,6 @@
           }
         },
         {
-          "title": "Food No Image",
-          "id": "food2",
-          "plugins": {
-            "xwalk": {
-              "page": {
-                "resourceType": "core/franklin/components/block/v1/block/item",
-                "template": {
-                  "name": "Food No image",
-                  "model": "food2"
-                }
-              }
-            }
-          }
-        },
-        {
           "title": "Foodsummary",
           "id": "foodsummary",
           "plugins": {
