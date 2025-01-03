@@ -70,7 +70,8 @@
     {
       "id": "taglist",
       "components": [
-        "tag"
+        "tag",
+        "anchorNavigation"
       ]
     }
   ]

@@ -47,7 +47,8 @@
       "text",
       "image",
       "button",
-      "title"
+      "title",
+      "anchorNavigation"
     ]
   },
   {
@@ -65,7 +66,8 @@
   {
     "id": "taglist",
     "components": [
-      "tag"
+      "tag",
+      "anchorNavigation"
     ]
   }
 ]
