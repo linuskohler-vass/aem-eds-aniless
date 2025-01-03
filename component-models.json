@@ -250,7 +250,7 @@
     ]
   },
   {
-    "id": "food",
+    "id": "food2",
     "fields": [
       {
         "component": "richtext",
@@ -269,7 +269,7 @@
     ]
   },
   {
-    "id": "food2",
+    "id": "food",
     "fields": [
       {
         "component": "reference",

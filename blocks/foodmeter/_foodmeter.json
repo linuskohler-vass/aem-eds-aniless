@@ -38,8 +38,8 @@
           "page": {
             "resourceType": "core/franklin/components/block/v1/block/item",
             "template": {
-              "name": "Food",
-              "model": "food"
+              "name": "Food No image",
+              "model": "food2"
             }
           }
         }
@@ -48,7 +48,7 @@
   ],
   "models": [
     {
-      "id": "food",
+      "id": "food2",
       "fields": [
         {
           "component": "richtext",
@@ -67,7 +67,7 @@
       ]
     },
     {
-      "id": "food2",
+      "id": "food",
       "fields": [
         {
           "component": "reference",
