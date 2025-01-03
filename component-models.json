@@ -240,6 +240,13 @@
         "name": "max-length",
         "label": "Max Length",
         "value": "0"
+      },
+      {
+        "component": "boolean",
+        "valueType": "boolean",
+        "name": "required",
+        "label": "Required",
+        "value": "0"
       }
     ]
   },

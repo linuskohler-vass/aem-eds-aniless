@@ -1,9 +1,10 @@
 function setupInputElement(inputContainer) {
   const inputData = inputContainer.querySelectorAll('div');
   if (inputData.length === 4) {
-    const [id, label, type, maxLength] = [...inputData].map((div) => div.textContent.trim());
+    const [id, label, type, maxLength,
+      required] = [...inputData].map((div) => div.textContent.trim());
 
-    if (id && label && type && maxLength) {
+    if (id && label && type && maxLength && required) {
       const inputWrapper = document.createElement('div');
       inputWrapper.className = 'input-wrapper';
 
@@ -18,6 +19,7 @@ function setupInputElement(inputContainer) {
       if (maxLength > 0) {
         inputElement.maxLength = maxLength;
       }
+      inputElement.required = required;
 
       inputWrapper.classList.add(`type-${inputElement.type}`);
 
