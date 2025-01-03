@@ -1,6 +1,6 @@
 function setupInputElement(inputContainer) {
   const inputData = inputContainer.querySelectorAll('div');
-  if (inputData.length === 4) {
+  if (inputData.length === 5) {
     const [id, label, type, maxLength,
       requiredInput] = [...inputData].map((div) => div.textContent.trim());
 
