@@ -10,6 +10,8 @@ import {
   waitForLCP,
   loadBlocks,
   loadCSS,
+  getMetadata,
+  toCamelCase,
 } from './aem.js';
 
 const LCP_BLOCKS = []; // add your LCP blocks to the list
@@ -58,6 +60,41 @@ async function loadFonts() {
   } catch (e) {
     // do nothing
   }
+}
+
+export async function fetchI18NPlaceholders(language = '') {
+  window.placeholders = window.placeholders || { i18n: {} };
+  let lang = language;
+  if (lang === '') {
+    lang = getMetadata('lang');
+  }
+  if (!window.placeholders.i18n[lang]) {
+    window.placeholders.i18n[lang] = new Promise((resolve) => {
+      fetch('/placeholders.json')
+        .then((resp) => {
+          if (resp.ok) {
+            return resp.json();
+          }
+          return {};
+        })
+        .then((json) => {
+          const placeholders = {};
+          json.data
+            .filter((placeholder) => placeholder.Key)
+            .forEach((placeholder) => {
+              placeholders[toCamelCase(placeholder.Key)] = placeholder[lang];
+            });
+          window.placeholders.i18n[lang] = placeholders;
+          resolve(window.placeholders.i18n[lang]);
+        })
+        .catch(() => {
+          // error loading placeholders
+          window.placeholders.i18n[lang] = {};
+          resolve(window.placeholders.i18n[lang]);
+        });
+    });
+  }
+  return window.placeholders.i18n[lang];
 }
 
 /**
