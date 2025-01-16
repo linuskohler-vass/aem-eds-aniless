@@ -68,8 +68,6 @@ export async function fetchI18NPlaceholders(language = '') {
   if (lang === '') {
     lang = getMetadata('lang');
   }
-  console.log(`Found lang: ${lang}`);
-
   if (!window.placeholders.i18n[lang]) {
     window.placeholders.i18n[lang] = new Promise((resolve) => {
       fetch('/placeholders.json')
