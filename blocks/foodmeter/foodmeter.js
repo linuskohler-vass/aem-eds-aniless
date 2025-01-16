@@ -11,10 +11,9 @@ function dispatchSelectionChange() {
 
 async function loadTitleFromPlaceholders(foodElement) {
   const placeholders = await fetchPlaceholders();
-  const { titleFoodSelection, titleFoodUnselection } = placeholders;
 
-  titleFoodSelectionText = titleFoodSelection;
-  titleFoodUnSelectionText = titleFoodUnselection;
+  titleFoodSelectionText = placeholders.titleFoodSelect;
+  titleFoodUnSelectionText = placeholders.titleFoodDeselect;
 
   foodElement.title = titleFoodSelectionText;
 }
