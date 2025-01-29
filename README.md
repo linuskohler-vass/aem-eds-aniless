@@ -17,13 +17,14 @@ npm i
 npm run lint
 ```
 
-## Local development
+## Repository creation hints
 
 1. Create a new repository based on the `aem-boilerplate` template and add a mountpoint in the `fstab.yaml`
-1. Add the [AEM Code Sync GitHub App](https://github.com/apps/aem-code-sync) to the repository
+2. Add the [AEM Code Sync GitHub App](https://github.com/apps/aem-code-sync) to the repository
+
+## Local development
 1. Install the [AEM CLI](https://github.com/adobe/helix-cli): `npm install -g @adobe/aem-cli`
-1. Start AEM Proxy: `aem up` (opens your browser at `http://localhost:3000`)
-1. Open the `aem-eds-aniless` directory in your favorite IDE and start coding :)
+2. Start AEM Proxy: `npm start` (opens your browser at `http://localhost:3000`)
 
 ## Prerequisites
 

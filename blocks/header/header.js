@@ -136,6 +136,20 @@ export default async function decorate(block) {
     });
   }
 
+  const navTools = nav.querySelector('.nav-tools');
+  if (navTools) {
+    const currentLanguage = getMetadata('lang');
+
+    navTools.querySelectorAll('a').forEach((lang) => {
+      if (lang.textContent === currentLanguage) {
+        lang.classList.add('active');
+      }
+
+      const url = window.location.href;
+      lang.href = url.replace(`/${currentLanguage}/`, `/${lang.textContent}/`);
+    });
+  }
+
   // hamburger for mobile
   const hamburger = document.createElement('div');
   hamburger.classList.add('nav-hamburger');

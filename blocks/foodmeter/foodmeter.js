@@ -1,5 +1,5 @@
-import { moveInstrumentation } from '../../scripts/scripts.js';
-import { createOptimizedPicture, fetchPlaceholders } from '../../scripts/aem.js';
+import { moveInstrumentation, fetchI18NPlaceholders } from '../../scripts/scripts.js';
+import { createOptimizedPicture } from '../../scripts/aem.js';
 
 let titleFoodSelectionText;
 let titleFoodUnSelectionText;
@@ -10,11 +10,10 @@ function dispatchSelectionChange() {
 }
 
 async function loadTitleFromPlaceholders(foodElement) {
-  const placeholders = await fetchPlaceholders();
-  const { titleFoodSelection, titleFoodUnselection } = placeholders;
+  const placeholders = await fetchI18NPlaceholders();
 
-  titleFoodSelectionText = titleFoodSelection;
-  titleFoodUnSelectionText = titleFoodUnselection;
+  titleFoodSelectionText = placeholders.titleSelectFood;
+  titleFoodUnSelectionText = placeholders.titleUnselectFood;
 
   foodElement.title = titleFoodSelectionText;
 }

@@ -89,18 +89,18 @@ export default async function decorate(block) {
       });
       if (response.ok) {
         const responseData = await response.json();
-        // eslint-disable-next-line no-console
         validationMessage.textContent = responseData.message;
+        // eslint-disable-next-line no-console
         console.log(responseData.message);
       } else {
         const errorData = await response.json();
-        // eslint-disable-next-line no-console
         validationMessage.textContent = `Form submission failed: ${errorData.message}`;
+        // eslint-disable-next-line no-console
         console.error('Form submission failed:', errorData.error || response.statusText);
       }
     } catch (error) {
-      // eslint-disable-next-line no-console
       validationMessage.textContent = 'Error submitting form.';
+      // eslint-disable-next-line no-console
       console.error('Error submitting form:', error);
     }
   });

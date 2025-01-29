@@ -3,6 +3,8 @@
     "/content/aem-eds-aniless/:/",
     "/content/aem-eds-aniless/configuration:/.helix/config.json",
     "/bin/jobteaser/data:/bin/jobteaser/data",
-    "/content/aem-eds-aniless/placeholders.json"
+    "/content/aem-eds-aniless/metadata:/metadata.json",
+    "/content/aem-eds-aniless/placeholders:/placeholders.json",
+    "/content/aem-eds-aniless/redirects:/redirects.json"
   ]
 }
