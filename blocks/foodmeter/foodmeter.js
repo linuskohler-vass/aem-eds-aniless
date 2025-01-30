@@ -1,4 +1,4 @@
-import { moveInstrumentation, fetchI18NPlaceholders } from '../../scripts/scripts.js';
+import { moveInstrumentation } from '../../scripts/scripts.js';
 import { createOptimizedPicture } from '../../scripts/aem.js';
 
 import ffetch from '../../scripts/ffetch.js';
@@ -12,15 +12,9 @@ function dispatchSelectionChange() {
 }
 
 async function loadTitleFromPlaceholders(foodElement) {
-  const placeholders = await fetchI18NPlaceholders();
-  const entries = await ffetch('placeholders.json');
-  // eslint-disable-next-line no-restricted-syntax
-  for await (const entry of entries) {
-    console.log(entry);
-  }
-
-  titleFoodSelectionText = placeholders.titleSelectFood;
-  titleFoodUnSelectionText = placeholders.titleUnselectFood;
+  const placeholders = await ffetch('placeholders.json').all();
+  titleFoodSelectionText = placeholders.find((item) => item.key === 'title_select_food').value;
+  titleFoodUnSelectionText = placeholders.find((item) => item.key === 'title_unselect_food').value;
 
   foodElement.title = titleFoodSelectionText;
 }
