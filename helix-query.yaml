@@ -18,5 +18,5 @@ indices:
   site-de:
     <<: *base-site
     include:
-      - '/de/**'
+      - '/de/blogs/**'
     target: /de/article-index.json

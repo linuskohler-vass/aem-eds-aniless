@@ -1,4 +1,16 @@
+import ffetch from '../../scripts/ffetch.js';
+
+async function checkArticlesData() {
+  const entries = ffetch('/query-index.json');
+  // eslint-disable-next-line no-restricted-syntax
+  for await (const entry of entries) {
+    console.log(entry.title);
+  }
+}
+
 export default function decorate(block) {
+  checkArticlesData();
+
   const paragraphs = block.querySelectorAll('p');
 
   const teaserCol = document.createElement('div');
