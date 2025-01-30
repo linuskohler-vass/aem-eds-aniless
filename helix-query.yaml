@@ -1,11 +1,9 @@
 version: 1
 indices:
-  articles:
+  site-en: &base-site
     include:
-      - /blogs/**
-    exclude:
-      - /blogs
-    target: /article-index.json
+      - '/en/blogs/**'
+    target: /en/article-index.json
     properties:
       title:
         select: head > meta[property="og:title"]
@@ -16,3 +14,9 @@ indices:
       category:
         selectFirst: main .taglist > div > div
         value: textContent(el)
+
+  site-de:
+    <<: *base-site
+    include:
+      - '/de/**'
+    target: /de/article-index.json
