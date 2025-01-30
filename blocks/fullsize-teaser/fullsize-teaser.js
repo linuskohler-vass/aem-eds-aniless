@@ -1,7 +1,7 @@
 import ffetch from '../../scripts/ffetch.js';
 
 async function checkArticlesData() {
-  const entries = ffetch('/query-index.json');
+  const entries = ffetch('https://main--aem-eds-ue-aniless--likodevelopment.hlx.live/article-index.json');
   // eslint-disable-next-line no-restricted-syntax
   for await (const entry of entries) {
     console.log(entry.title);
