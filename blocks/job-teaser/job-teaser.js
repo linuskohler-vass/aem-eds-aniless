@@ -1,4 +1,4 @@
-const DATA_ENDPOINT_URL = '/bin/jobteaser/data';
+const DATA_ENDPOINT_URL = 'http://publish-p11338-e1404827.adobeaemcloud.com/bin/jobteaser/data';
 
 function loadTitle(jobTeaserTitleContainer) {
   const elementWithTitle = jobTeaserTitleContainer.querySelector('p');
