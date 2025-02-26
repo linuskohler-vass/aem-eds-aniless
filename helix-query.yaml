@@ -2,9 +2,9 @@ version: 1
 indices:
   site-en: &base-site
     include:
-      - '/en/footer/**'
-    exclude:
       - '/en/blogs/**'
+    exclude:
+      - '/en/blogs'
     target: /en/article-index.json
     properties:
       title:
@@ -25,5 +25,5 @@ indices:
     include:
       - '/de/blogs/**'
     exclude:
-      - '/de/blogs/'
+      - '/de/blogs'
     target: /de/article-index.json
