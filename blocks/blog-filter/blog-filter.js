@@ -142,9 +142,20 @@ export default async function decorate(block) {
     results.appendChild(articlesGrid);
   }
 
+  function getLocale() {
+    const validLocales = ['de', 'en'];
+    const path = window.location.pathname;
+    const segments = path.split('/');
+    const locale = segments.find(segment => 
+      segment.length === 2 && validLocales.includes(segment.toLowerCase())
+    );
+    
+    return locale?.toLowerCase() || 'en';
+  }
+
   try {
-    const language = window.location.pathname.split('/')[1] || 'en';
-    const response = await ffetch(`https://main--aem-eds-aniless--linuskohler-vass.hlx.live/${language}/article-index.json`).all();
+    const locale = getLocale();
+    const response = await ffetch(`https://main--aem-eds-aniless--linuskohler-vass.hlx.live/${locale}/article-index.json`).all();
 
     if (!response?.data || !Array.isArray(response.data)) {
       throw new Error('Invalid response format');
