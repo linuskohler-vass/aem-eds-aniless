@@ -4,7 +4,7 @@ indices:
     include:
       - '/en/blogs/**'
     exclude:
-      - '/en/blogs/'
+      - '/en/blogs/the-canvas-for-culinary-creativity'
     target: /en/article-index.json
     properties:
       title:
