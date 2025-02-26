@@ -1,5 +1,3 @@
-import ffetch from '../../scripts/ffetch.js';
-
 export default async function decorate(block) {
   const container = document.createElement('div');
   container.className = 'blog-filter-container';
