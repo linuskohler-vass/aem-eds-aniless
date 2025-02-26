@@ -162,10 +162,7 @@ export default async function decorate(block) {
 
     articles = responseData.data.filter((item) => {
       if (!item || typeof item !== 'object') return false;
-      const hasDisplayableContent = (
-        (item.title && typeof item.title === 'string' && item.title.trim() !== '') &&
-        (item.path && typeof item.path === 'string' && item.path.trim() !== '')
-      );
+      const hasDisplayableContent = item.title && item.path && item.title.trim() !== '' && item.path.trim() !== '';
       return hasDisplayableContent;
     });
 
