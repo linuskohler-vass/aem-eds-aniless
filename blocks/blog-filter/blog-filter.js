@@ -146,10 +146,10 @@ export default async function decorate(block) {
     const validLocales = ['de', 'en'];
     const path = window.location.pathname;
     const segments = path.split('/');
-    const locale = segments.find(segment => 
+    const isValidLocale = (segment) => (
       segment.length === 2 && validLocales.includes(segment.toLowerCase())
     );
-    
+    const locale = segments.find(isValidLocale);
     return locale?.toLowerCase() || 'en';
   }
 
