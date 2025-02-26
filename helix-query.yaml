@@ -2,9 +2,9 @@ version: 1
 indices:
   site-en: &base-site
     include:
-      - '/en/blogs/**'
+      - '/en/footer/**'
     exclude:
-      - '/en/blogs/the-canvas-for-culinary-creativity'
+      - '/en/blogs/**'
     target: /en/article-index.json
     properties:
       title:
