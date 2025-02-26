@@ -1,0 +1,187 @@
+.blog-filter {
+  padding: 2rem 0;
+  background-color: var(--lightest-color);
+}
+
+.blog-filter-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.blog-filter-form {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.blog-filter-input {
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--dark-color);
+  border-radius: var(--button-border-radius);
+  flex: 1;
+  min-width: 200px;
+  font-size: var(--body-font-size-xs);
+  background-color: var(--lightest-color);
+  color: var(--text-color);
+  font-family: var(--body-font-family);
+}
+
+.blog-filter-input::placeholder {
+  color: var(--link-color);
+}
+
+.blog-filter-select {
+  padding: 0.75rem 2.5rem 0.75rem 1rem;
+  border: 1px solid var(--dark-color);
+  border-radius: var(--button-border-radius);
+  min-width: 150px;
+  font-size: var(--body-font-size-xs);
+  background-color: var(--lightest-color);
+  color: var(--text-color);
+  font-family: var(--body-font-family);
+  appearance: none;
+  background-image: url('data:image/svg+xml;charset=US-ASCII,<svg width="14" height="8" viewBox="0 0 14 8" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1L7 7L13 1" stroke="%232F2927" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>');
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  cursor: pointer;
+}
+
+.blog-filter-results {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 1rem 0;
+}
+
+.blog-filter-results-header {
+  text-align: left;
+  color: var(--text-color);
+  font-size: var(--body-font-size-s);
+  font-weight: 600;
+  font-family: var(--body-font-family);
+  padding: 0.5rem 0;
+}
+
+.blog-filter-no-results {
+  text-align: center;
+  grid-column: 1 / -1;
+  color: var(--text-color);
+  font-size: var(--body-font-size-m);
+  padding: 2rem;
+  background-color: var(--overlay-background-color);
+  border-radius: var(--button-border-radius);
+  margin: 0;
+}
+
+.blog-filter-articles-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 2rem;
+}
+
+.blog-filter-article {
+  border: 1px solid var(--dark-color);
+  border-radius: var(--button-border-radius);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: var(--lightest-color);
+  height: 100%;
+}
+
+.blog-filter-article:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--box-shadow-strong);
+}
+
+.blog-filter-article-content {
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  height: 100%;
+}
+
+.blog-filter-article-category {
+  color: var(--link-hover-color);
+  font-size: var(--body-font-size-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+  font-family: var(--body-font-family);
+}
+
+.blog-filter-article-title {
+  margin: 0;
+  font-size: var(--heading-font-size-s);
+  color: var(--text-color);
+  line-height: 1.25;
+  font-weight: 600;
+  font-family: var(--heading-font-family);
+}
+
+.blog-filter-article-description {
+  color: var(--link-color);
+  line-height: 1.6;
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  font-size: var(--body-font-size-xs);
+  font-family: var(--body-font-family);
+}
+
+.blog-filter a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  height: 100%;
+}
+
+.blog-filter a:hover {
+  color: var(--link-hover-color);
+}
+
+.blog-filter-input:focus,
+.blog-filter-select:focus {
+  outline: none;
+  border-color: var(--link-hover-color);
+  box-shadow: 0 0 0 2px var(--link-hover-color-light);
+}
+
+.blog-filter-input:hover,
+.blog-filter-select:hover {
+  border-color: var(--link-hover-color);
+}
+
+.blog-filter-loading {
+  text-align: center;
+  padding: 2rem;
+  color: var(--text-color);
+  font-size: var(--body-font-size-m);
+}
+
+/* Responsive adjustments */
+@media (width <= 768px) {
+  .blog-filter-articles-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .blog-filter-form {
+    flex-direction: column;
+  }
+  
+  .blog-filter-input,
+  .blog-filter-select {
+    width: 100%;
+  }
+
+  .blog-filter-results-header {
+    text-align: center;
+  }
+}

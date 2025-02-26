@@ -3,6 +3,8 @@ indices:
   site-en: &base-site
     include:
       - '/en/blogs/**'
+    exclude:
+      - '/en/blogs/'
     target: /en/article-index.json
     properties:
       title:
@@ -14,9 +16,14 @@ indices:
       category:
         selectFirst: main .taglist > div > div
         value: textContent(el)
+      path:
+        select: head > meta[property="og:url"]
+        value: attribute(el, "content")
 
   site-de:
     <<: *base-site
     include:
       - '/de/blogs/**'
+    exclude:
+      - '/de/blogs/'
     target: /de/article-index.json
