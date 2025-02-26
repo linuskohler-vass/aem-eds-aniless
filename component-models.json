@@ -131,6 +131,10 @@
     ]
   },
   {
+    "id": "blogFilter",
+    "fields": []
+  },
+  {
     "id": "card",
     "fields": [
       {
