@@ -1,4 +1,15 @@
 export default async function decorate(block) {
+  function getLocale() {
+    const validLocales = ['de', 'en'];
+    const path = window.location.pathname;
+    const segments = path.split('/');
+    const isValidLocale = (segment) => (
+      segment.length === 2 && validLocales.includes(segment.toLowerCase())
+    );
+    const locale = segments.find(isValidLocale);
+    return locale?.toLowerCase() || 'en';
+  }
+
   const container = document.createElement('div');
   container.className = 'blog-filter-container';
 
@@ -8,16 +19,16 @@ export default async function decorate(block) {
 
   const searchInput = document.createElement('input');
   searchInput.type = 'text';
-  searchInput.placeholder = 'Search blog articles...';
+  searchInput.placeholder = getLocale() === 'en' ? 'Search blog articles...' : 'Suche nach Blogartikeln...';
   searchInput.className = 'blog-filter-input';
-  searchInput.setAttribute('aria-label', 'Search blog articles');
+  searchInput.setAttribute('aria-label', getLocale() === 'en' ? 'Search blog articles' : 'Suche nach Blogartikeln');
 
   const categorySelect = document.createElement('select');
   categorySelect.className = 'blog-filter-select';
-  categorySelect.setAttribute('aria-label', 'Filter by category');
+  categorySelect.setAttribute('aria-label', getLocale() === 'en' ? 'Filter by category' : 'Kategorie filtern');
   const defaultOption = document.createElement('option');
   defaultOption.value = 'all';
-  defaultOption.textContent = 'All Categories';
+  defaultOption.textContent = getLocale() === 'en' ? 'All Categories' : 'Alle Kategorien';
   categorySelect.appendChild(defaultOption);
 
   form.appendChild(searchInput);
@@ -139,17 +150,6 @@ export default async function decorate(block) {
     });
 
     results.appendChild(articlesGrid);
-  }
-
-  function getLocale() {
-    const validLocales = ['de', 'en'];
-    const path = window.location.pathname;
-    const segments = path.split('/');
-    const isValidLocale = (segment) => (
-      segment.length === 2 && validLocales.includes(segment.toLowerCase())
-    );
-    const locale = segments.find(isValidLocale);
-    return locale?.toLowerCase() || 'en';
   }
 
   try {

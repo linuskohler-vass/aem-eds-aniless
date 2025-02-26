@@ -19,11 +19,10 @@ indices:
       path:
         select: head > meta[property="og:url"]
         value: attribute(el, "content")
-
   site-de:
-    <<: *base-site
     include:
       - '/de/blogs/**'
     exclude:
       - '/de/blogs'
     target: /de/article-index.json
+    <<: *base-site
