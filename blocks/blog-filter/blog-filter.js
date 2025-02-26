@@ -204,6 +204,6 @@ export default async function decorate(block) {
   } catch (error) {
     // eslint-disable-next-line no-console
     console.error('Error fetching or processing articles:', error);
-    resultsContainer.innerHTML = '<p style="text-align: center; grid-column: 1 / -1;">Sorry, we couldn\'t load the articles at this time.</p>';
+    resultsContainer.innerHTML = `<p style="text-align: center; grid-column: 1 / -1;"> ${getLocale() === 'en' ? 'Sorry, we couldn\'t load the articles at this time.' : 'Entschuldigung, die Artikel konnten derzeit nicht geladen werden.'}</p>`;
   }
 }
