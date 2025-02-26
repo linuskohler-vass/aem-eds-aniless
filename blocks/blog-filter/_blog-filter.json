@@ -2,7 +2,7 @@
   "definitions": [
     {
       "title": "Blog Filter",
-      "id": "blog-filter",
+      "id": "blogfilter",
       "plugins": {
         "xwalk": {
           "page": {
@@ -15,5 +15,11 @@
         }
       }
     }
-  ]
+  ],
+  "models": [
+    {
+      "id": "blogfilter"
+    }
+  ],
+  "filters": []
 }
