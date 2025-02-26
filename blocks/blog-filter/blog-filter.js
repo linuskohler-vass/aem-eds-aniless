@@ -80,6 +80,7 @@ export default async function decorate(block) {
 
     return articleList.filter((article) => {
       if (!article || typeof article !== 'object') return false;
+      if (article.path && /^\/[a-z]{2}\/blogs$/.test(article.path)) return false;
 
       const searchFields = [
         article.title,
