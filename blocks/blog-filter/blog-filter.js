@@ -154,21 +154,19 @@ export default async function decorate(block) {
   try {
     const locale = getLocale();
     const response = await fetch(`https://main--aem-eds-aniless--linuskohler-vass.hlx.live/${locale}/article-index.json`);
-    const data = await response.json();
+    const responseData = await response.json();
 
-    if (!Array.isArray(data)) {
+    if (!responseData?.data || !Array.isArray(responseData.data)) {
       throw new Error('Invalid response format');
     }
 
-    articles = data.filter((item) => {
+    articles = responseData.data.filter((item) => {
       if (!item || typeof item !== 'object') return false;
       const hasDisplayableContent = (
-        (item.title && typeof item.title === 'string' && item.title.trim() !== '')
-        || (item.description && typeof item.description === 'string' && item.description.trim() !== '')
+        (item.title && typeof item.title === 'string' && item.title.trim() !== '') &&
+        (item.path && typeof item.path === 'string' && item.path.trim() !== '')
       );
-      const isNotSystemPage = !item.path?.endsWith('/blogs');
-      const hasValidPath = item.path && typeof item.path === 'string' && item.path.trim() !== '';
-      return hasDisplayableContent && isNotSystemPage && hasValidPath;
+      return hasDisplayableContent;
     });
 
     const hasCategories = articles.some((item) => item?.category);
