@@ -155,13 +155,14 @@ export default async function decorate(block) {
 
   try {
     const locale = getLocale();
-    const response = await ffetch(`https://main--aem-eds-aniless--linuskohler-vass.hlx.live/${locale}/article-index.json`).all();
+    const response = await fetch(`https://main--aem-eds-aniless--linuskohler-vass.hlx.live/${locale}/article-index.json`);
+    const data = await response.json();
 
-    if (!response?.data || !Array.isArray(response.data)) {
+    if (!Array.isArray(data)) {
       throw new Error('Invalid response format');
     }
 
-    articles = response.data.filter((item) => {
+    articles = data.filter((item) => {
       if (!item || typeof item !== 'object') return false;
       const hasDisplayableContent = (
         (item.title && typeof item.title === 'string' && item.title.trim() !== '')
