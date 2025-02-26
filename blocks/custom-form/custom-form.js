@@ -79,7 +79,7 @@ export default async function decorate(block) {
       const response = await fetch(actionUrl, {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json'
+          'Content-Type': 'application/json',
         },
         body: JSON.stringify(jsonData),
       });
