@@ -80,6 +80,9 @@ export default async function decorate(block) {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          'CSRF-Token': 'eyJleHAiOjE3MzQ1MTc0MjMsImlhdCI6MTczNDUxNjgyM30.H9B2TAZfQmu_fyIF70tLH0dG0Go46z3iToj9rqofRz8',
+          mode: 'cors',
+          credentials: 'include',
         },
         body: JSON.stringify(jsonData),
       });
