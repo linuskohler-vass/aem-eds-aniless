@@ -1,14 +1,28 @@
+import { getMetadata } from '../../scripts/aem.js';
+import ffetch from '../../scripts/ffetch.js';
+
+let searchBlogArticles;
+let filterByCategory;
+let allCategories;
+let noArticlesFound;
+let matching;
+let inCategory;
+let errorMessage;
+
+async function loadTranslationsFromPlaceholders() {
+  const placeholders = await ffetch('placeholders.json').all();
+  searchBlogArticles = placeholders.find((item) => item.key === 'search_blog_article').value;
+  filterByCategory = placeholders.find((item) => item.key === 'filter_by_category').value;
+  allCategories = placeholders.find((item) => item.key === 'all_categories').value;
+  noArticlesFound = placeholders.find((item) => item.key === 'no_articles_found').value;
+  matching = placeholders.find((item) => item.key === 'matching').value;
+  inCategory = placeholders.find((item) => item.key === 'in_category').value;
+  errorMessage = placeholders.find((item) => item.key === 'error_message').value;
+}
+
 export default async function decorate(block) {
-  function getLocale() {
-    const validLocales = ['de', 'en'];
-    const path = window.location.pathname;
-    const segments = path.split('/');
-    const isValidLocale = (segment) => (
-      segment.length === 2 && validLocales.includes(segment.toLowerCase())
-    );
-    const locale = segments.find(isValidLocale);
-    return locale?.toLowerCase() || 'en';
-  }
+  loadTranslationsFromPlaceholders();
+  const language = getMetadata('lang');
 
   const container = document.createElement('div');
   container.className = 'blog-filter-container';
@@ -19,16 +33,16 @@ export default async function decorate(block) {
 
   const searchInput = document.createElement('input');
   searchInput.type = 'text';
-  searchInput.placeholder = getLocale() === 'en' ? 'Search blog articles...' : 'Suche nach Blogartikeln...';
+  searchInput.placeholder = searchBlogArticles;
+  searchInput.setAttribute('aria-label', searchBlogArticles);
   searchInput.className = 'blog-filter-input';
-  searchInput.setAttribute('aria-label', getLocale() === 'en' ? 'Search blog articles' : 'Suche nach Blogartikeln');
 
   const categorySelect = document.createElement('select');
   categorySelect.className = 'blog-filter-select';
-  categorySelect.setAttribute('aria-label', getLocale() === 'en' ? 'Filter by category' : 'Kategorie filtern');
+  categorySelect.setAttribute('aria-label', filterByCategory);
   const defaultOption = document.createElement('option');
   defaultOption.value = 'all';
-  defaultOption.textContent = getLocale() === 'en' ? 'All Categories' : 'Alle Kategorien';
+  defaultOption.textContent = allCategories;
   categorySelect.appendChild(defaultOption);
 
   form.appendChild(searchInput);
@@ -134,8 +148,8 @@ export default async function decorate(block) {
       const noResults = document.createElement('p');
       noResults.className = 'blog-filter-no-results';
       noResults.textContent = searchTerm
-        ? `No articles found matching "${searchTerm}"${selectedCategory !== 'all' ? ` in category "${selectedCategory}"` : ''}`
-        : 'No articles found.';
+        ? `${noArticlesFound} ${matching} "${searchTerm}"${selectedCategory !== 'all' ? ` ${inCategory} "${selectedCategory}"` : ''}`
+        : `${noArticlesFound}.`;
       results.appendChild(noResults);
       return;
     }
@@ -153,8 +167,7 @@ export default async function decorate(block) {
   }
 
   try {
-    const locale = getLocale();
-    const response = await fetch(`https://main--aem-eds-aniless--linuskohler-vass.hlx.live/${locale}/article-index.json`);
+    const response = await ffetch(`/${language}/article-index.json`).all();
     const responseData = await response.json();
 
     if (!responseData?.data || !Array.isArray(responseData.data)) {
@@ -204,6 +217,6 @@ export default async function decorate(block) {
   } catch (error) {
     // eslint-disable-next-line no-console
     console.error('Error fetching or processing articles:', error);
-    resultsContainer.innerHTML = `<p style="text-align: center; grid-column: 1 / -1;"> ${getLocale() === 'en' ? 'Sorry, we couldn\'t load the articles at this time.' : 'Entschuldigung, die Artikel konnten derzeit nicht geladen werden.'}</p>`;
+    resultsContainer.innerHTML = `<p style="text-align: center; grid-column: 1 / -1;"> ${errorMessage}</p>`;
   }
 }
