@@ -173,7 +173,7 @@ export default async function decorate(block) {
       throw new Error('Invalid response format');
     }
 
-    articles = responseData.data.filter((item) => {
+    articles = responseData.filter((item) => {
       if (!item || typeof item !== 'object') return false;
       return item.title?.trim() && item.path?.trim();
     });
