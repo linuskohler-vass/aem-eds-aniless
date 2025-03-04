@@ -167,20 +167,18 @@ export default async function decorate(block) {
   }
 
   try {
-    const response = await ffetch(`/${language}/article-index.json`).all();
-    const responseData = await response.json();
+    const responseData = await ffetch(`/${language}/article-index.json`).all();
 
-    if (!responseData?.data || !Array.isArray(responseData.data)) {
+    if (!Array.isArray(responseData)) {
       throw new Error('Invalid response format');
     }
 
     articles = responseData.data.filter((item) => {
       if (!item || typeof item !== 'object') return false;
-      const hasDisplayableContent = item.title && item.path && item.title.trim() !== '' && item.path.trim() !== '';
-      return hasDisplayableContent;
+      return item.title?.trim() && item.path?.trim();
     });
 
-    const hasCategories = articles.some((item) => item?.category);
+    const hasCategories = articles.some((item) => item.category?.trim());
 
     if (!hasCategories) {
       categorySelect.style.display = 'none';
