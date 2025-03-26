@@ -22,7 +22,7 @@ async function loadTranslationsFromPlaceholders() {
 }
 
 export default async function decorate(block) {
-  loadTranslationsFromPlaceholders();
+  await loadTranslationsFromPlaceholders();
 
   const container = document.createElement('div');
   container.className = 'blog-filter-container';

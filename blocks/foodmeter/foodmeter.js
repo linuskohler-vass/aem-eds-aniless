@@ -20,14 +20,14 @@ async function loadTitleFromPlaceholders(foodElement) {
   foodElement.title = titleFoodSelectionText;
 }
 
-export default function decorate(block) {
+export default async function decorate(block) {
   /* change to ul, li */
   const ul = document.createElement('ul');
-  [...block.children].forEach((row) => {
+  [...block.children].forEach(async (row) => {
     const li = document.createElement('li');
     li.className = 'food';
 
-    loadTitleFromPlaceholders(li);
+    await loadTitleFromPlaceholders(li);
 
     moveInstrumentation(row, li);
     while (row.firstElementChild) li.append(row.firstElementChild);
