@@ -8,21 +8,21 @@ let noArticlesFound;
 let matching;
 let inCategory;
 let errorMessage;
+const language = getMetadata('lang');
 
 async function loadTranslationsFromPlaceholders() {
   const placeholders = await ffetch('placeholders.json').all();
-  searchBlogArticles = placeholders.find((item) => item.key === 'search_blog_article').value;
-  filterByCategory = placeholders.find((item) => item.key === 'filter_by_category').value;
-  allCategories = placeholders.find((item) => item.key === 'all_categories').value;
-  noArticlesFound = placeholders.find((item) => item.key === 'no_articles_found').value;
-  matching = placeholders.find((item) => item.key === 'matching').value;
-  inCategory = placeholders.find((item) => item.key === 'in_category').value;
-  errorMessage = placeholders.find((item) => item.key === 'error_message').value;
+  searchBlogArticles = placeholders.find((item) => item.Key === 'search_blog_article')[language];
+  filterByCategory = placeholders.find((item) => item.Key === 'filter_by_category')[language];
+  allCategories = placeholders.find((item) => item.Key === 'all_categories')[language];
+  noArticlesFound = placeholders.find((item) => item.Key === 'no_articles_found')[language];
+  matching = placeholders.find((item) => item.Key === 'matching')[language];
+  inCategory = placeholders.find((item) => item.Key === 'in_category')[language];
+  errorMessage = placeholders.find((item) => item.Key === 'error_message')[language];
 }
 
 export default async function decorate(block) {
   loadTranslationsFromPlaceholders();
-  const language = getMetadata('lang');
 
   const container = document.createElement('div');
   container.className = 'blog-filter-container';

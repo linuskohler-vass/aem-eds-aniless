@@ -1,10 +1,11 @@
 import { moveInstrumentation } from '../../scripts/scripts.js';
-import { createOptimizedPicture } from '../../scripts/aem.js';
+import { createOptimizedPicture, getMetadata } from '../../scripts/aem.js';
 
 import ffetch from '../../scripts/ffetch.js';
 
 let titleFoodSelectionText;
 let titleFoodUnSelectionText;
+const language = getMetadata('lang');
 
 function dispatchSelectionChange() {
   const event = new CustomEvent('foodSelectionChange', { detail: {} });
@@ -13,8 +14,8 @@ function dispatchSelectionChange() {
 
 async function loadTitleFromPlaceholders(foodElement) {
   const placeholders = await ffetch('placeholders.json').all();
-  titleFoodSelectionText = placeholders.find((item) => item.key === 'title_select_food').value;
-  titleFoodUnSelectionText = placeholders.find((item) => item.key === 'title_unselect_food').value;
+  titleFoodSelectionText = placeholders.find((item) => item.Key === 'title_select_food')[language];
+  titleFoodUnSelectionText = placeholders.find((item) => item.Key === 'title_unselect_food')[language];
 
   foodElement.title = titleFoodSelectionText;
 }
