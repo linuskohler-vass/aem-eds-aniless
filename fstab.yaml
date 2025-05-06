@@ -1,5 +1,5 @@
 mountpoints:
   /:
-    url: "https://author-p11338-e1404742.adobeaemcloud.com/bin/franklin.delivery/linuskohler-vass/aem-eds-aniless/main"
+    url: "https://author-p11338-e1404686.adobeaemcloud.com/bin/franklin.delivery/linuskohler-vass/aem-eds-aniless/main"
     type: "markup"
     suffix: ".html"
