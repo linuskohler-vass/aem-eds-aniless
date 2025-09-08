@@ -1,6 +1,9 @@
 # Aniless EDS demo
 VASS Switzerland demo project to showcase AEM based EDS
 
+## Content source for authoring
+https://author-p11338-e1404827.adobeaemcloud.com/ui#/aem/sites.html/content/aem-eds-aniless
+
 ## Environments
 - Preview: https://main--aem-eds-aniless--linuskohler-vass.hlx.page/
 - Live: https://main--aem-eds-aniless--linuskohler-vass.hlx.live/
